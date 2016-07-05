@@ -1,4 +1,4 @@
-site_name: CppTutorial
+site_name: JavaTutorial
 pages:
 - "Home": 'index.md'
 markdown_extensions:

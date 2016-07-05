@@ -2,278 +2,178 @@
     "docs": [
         {
             "location": "/", 
-            "text": "C/C++\n\n\nVisual Studio 2013\n\n\nInstall Extension\n\n\nVsVim\n\n\ngoogletest\n \nguide\n\n\nFolder Structure\n\n\nwith VS 2013\n\n\nsolution\n\u2502   README.md\n\u2502\n|\u2500\u2500\u2500project1\n|   \u2502   file011.txt\n|   \u2502   file012.txt\n|   \u2502\n|\u2500\u2500\u2500project2\n|   \u2502   file011.txt\n|   \u2502   file012.txt\n|   \u2502\n\n\n\n\nFormat: \nCtrl + K, Ctrl + D\n\n\nC++ Style\n\n\n[wonderplugin_slider id=\"5\"]\n\n\n\n\n\nTools\n\n\n\n\n\n\n\n\n\n\n\nDocumentation\n\n\n\n\n\n\nIDE\n\n\n\n\n\n\n\n\n\n\n\n\nProgramming Tutorials\n\n\n\n\n\n\nClion\n, \nVisual Studio\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBuild Tool\n\n\n\nTest\n\n\n\nLogging\n\n\n\n\n\n\n\n\n\n\nGoogle Test\n,\n\nChamois\n,\n\nVS UnitTest\n\n\n\n\n\n\n\n\n\n\n\n\n\nC++: 101\n\n\n1. Installation\n\n\n\n\nInstall Visual Studio 2013\n\n\n\n\n2. Hello World\n\n\n#include \niostream\n\nusing namespace std;\n\nint main() {\n    cout \n \nhello world\n;\n}\n\n\n\n\nC++: Use C++\n\n\n1. Naming \n1\n\n\nvariable_name_like_this\nclass_data_memeber_name_like_this_\nkConstantNamesLikeThis\nClassNameLikeThis\nfilenamelikethis_myusefulclass_test.cc\n\n\n\n\n2. Comment \n1\n\n\n2.1 Class Comment\n\n\n// Iterates over the contents of a GargantuanTable.\n// Example:\n//    GargantuanTableIterator* iter = table-\nNewIterator();\n//    for (iter-\nSeek(\nfoo\n); !iter-\ndone(); iter-\nNext()) {\n//      process(iter-\nkey(), iter-\nvalue());\n//    }\n//    delete iter;\nclass GargantuanTableIterator {\n  ...\n};\n\n\n\n\n2.2 Todo Comment\n\n\n// TODO(kl@gmail.com): Use a \n*\n here for concatenation operator.\n// TODO(Zeke) change this to use relations.\n\n\n\n\nC++: Data Structure\n\n\nStack\n\n\nQuote\n\n\nLinked List\n\n\nGraph\n\n\nArray\n\n\nDeque\n\n\nForward_list\n\n\nList\n\n\nhttp://www.slideshare.net/sshinchan/single-linked-list\n\n\nMap\n\n\nSet\n\n\nStack\n\n\nunordered_map\n\n\nunordered_set\n\n\nvector\n\n\ndatetime\n\n\nhttp://www.tutorialspoint.com/cplusplus/cpp_date_time.htm\n\n\nC++: String\n\n\nString Basic\n1\n\n\n#include \niostream\n\n#include \nstring\n\nusing namespace std ;\n\n// assign a string\nstring s1 = \nwww.java2s.com\\n\n;\ncout \n s1;\n\n// input a string\nstring s2;\ncin \n s2;\n\n// concatenate two strings\nstring s_c = s1 + s2;\n\n// compare strings\ns1 == s2;\n\n\n\n\nC++: Pointer\n\n\nPointer \n1\n\n\nA pointer is a variable whose value is the address of another variable. Like any variable or constant, you must declare a pointer before you can work with it.\n\n\nThe general form of a pointer variable declaration is:\n\n\ntype *variable_name;\n// example\nint    *ip;    // pointer to an integer\ndouble *dp;    // pointer to a double\nfloat  *fp;    // pointer to a float\nchar   *ch;    // pointer to character\n\n\n\n\nPointer Lab\n\n\n\n\n#include \niostream\n\nusing namespace std;\n\n/*\n * Look at these lines\n */\nint* a;\na = new int[3];\na[0] = 10;\na[1] = 2;\ncout \n \nAddress of pointer a: \na = \n \n \na \n endl;\ncout \n \nValue   of pointer a:  a = \n \n a \n endl \n endl;\ncout \n \nAddress of a[0]: \na[0] = \n \n \na[0] \n endl;\ncout \n \nValue   of a[0]: a[0]  = \n \n a[0]  \n endl;\ncout \n \nValue   of a[0]: *a    = \n \n *a    \n endl \n endl;\ncout \n \nAddress of a[1]: \na[1] = \n \n \na[1] \n endl;\ncout \n \nValue   of a[1]: a[1]  = \n \n a[1]  \n endl;\ncout \n \nValue   of a[1]: *(a+1)= \n \n *(a+1)\n endl \n endl;\ncout \n \nAddress of a[2]: \na[2] = \n \n \na[2] \n endl;\ncout \n \nValue   of a[2]: a[2]  = \n \n a[2]  \n endl;\ncout \n \nValue   of a[2]: *(a+2)= \n \n *(a+2)\n endl \n endl;\n\n\n\n\nResult:\n\n\n[code lang=\"text\"]\nAddress of pointer a: \na = 008FF770\nValue   of pointer a:  a = 00C66ED0\n\n\nAddress of a[0]: \na[0] = 00C66ED0\nValue   of a[0]: a[0]  = 10\nValue   of a[0]: *a    = 10\n\n\nAddress of a[1]: \na[1] = 00C66ED4\nValue   of a[1]: a[1]  = 2\nValue   of a[1]: *(a+1)= 2\n\n\nAddress of a[2]: \na[2] = 00C66ED8\nValue   of a[2]: a[2]  = -842150451\nValue   of a[2]: *(a+2)= -842150451\n\n\n\n```cpp\n/*\n * ? How about this\n */\na[3] = 8;\n// it will throw some think like this\n// Stack around the variable 'a' was corrupted.\n\n\n\n\nC++: OOP\n\n\n\n\nClasses and Objects\n\n\n\n\n\n\nC++: Template\n\n\nFunction Template\n\n\n#include \niostream\n\n#include \nstring\n\n\nusing namespace std;\n\ntemplate \ntypename T\n\n\nT Max(T a, T b)\n{\n    return a \n b ? b : a;\n}\n\nint main()\n{\n\n    int i = 39;\n    int j = 20;\n    cout \n Max(i, j) \n endl;\n\n    double f1 = 13.5;\n    double f2 = 20.7;\n    cout \n Max(f1, f2) \n endl;\n\n    string s1 = \nHello\n;\n    string s2 = \nWorld\n;\n    cout \n Max(s1, s2) \n endl;\n\n    double n1 = 20.3;\n    float n2 = 20.4;\n    // it will show an error\n    // Error: no instance of function template \nMax\n matches the argument list\n    //        arguments types are: (double, float)\n    cout \n Max(n1, n2) \n endl;\n    return 0;\n}\n\n\n\n\nC++: Test\n\n\n1. Create Unit Test in Visual Studio 2013\n\n\nStep 1. Create \nTDDLab\n Solution\n\n\n1.1\n Open Visual Studio 2013\n\n\n1.2\n \nFile\n -\n  \nNew Project...\n -\n\n\n\n\n\n\nClick \nVisual C++\n -\n \nWin32\n\n\n\n\n\n\nChoose \nWin32 Console Application\n\n\n\n\n\n\nFill to \nName\n input text: \nTDDLab\n\n\n\n\n\n\nClick \nOK\n -\n \nNext\n\n\n\n\n\n\n1.3\n In project settings, remove options:\n\n\n\n\nPrecompiled Header\n\n\nSecurirty Develoment Lifecyde(SQL) check\n\n\n\n\n1.4\n Click \nFinish\n\n\nStep 2. Create \nCounter\n Class\n\n\n2.1\n Right-click \nTDDLab\n -\n \nAdd\n -\n \nClass...\n\n\n2.2\n Choose \nVisual C++\n -\n \nC++ Class\n -\n \nAdd\n\n\n2.3\n Fill in \nClass name\n box \nCounter\n -\n \nFinish\n\n\n2.4\n In \nCounter.h\n file, add this below function\n\n\nint add(int a, int b);\n\n\n\n\n2.5\n In \nCounter.cpp\n, add this below function\n\n\nint Counter::add(int a, int b) {\n  return a+b;\n}\n\n\n\n\nYour \nCounter\n class should look like this\n\n\n\n\nStep 3. Create \nTDDLabTest\n Project\n\n\n3.1\n Right-click \nSolution 'TDDLab'\n -\n \nAdd\n -\n \nNew Project...\n\n\n3.2\n Choose \nVisual C++\n -\n \nTest\n\n\n3.3\n Choose \nNative Unit Test Project\n\n\n3.4\n Fill to \nName\n input text: \nTDDLabTest\n\n\nStep 4. Write unit test\n\n\n4.1\n  In \nunittest1.cpp\n, add header of \nCounter\n class\n\n\n#include \n../TDDLab/Counter.h\n\n\n\n\n\n4.2\n In \nTEST_METHOD\n function\n\n\n{\n  Counter counter;\n  Assert::AreEqual(2, counter.add(1, 1));\n}\n\n\n\n\n4.3\n Click \nTEST\n in menu bar -\n \nRun\n -\n `All Test (Ctrl + R, A)\n\n\nStep 5. Fix error \nLNK 2019: unresolved external symbol\n\n\n5.1\n Change \nConfiguration Type\n of \nTDDLab\n project\n\n\n\n\nRight click  \nTDDLab\n project -\n \nProperties\n\n\nGeneral\n -\n \nConfiguration Type\n -\n \nStatic library (.lib)\n -\n \nOK\n\n\n\n\n5.2\n Add Reference to \nTDDLabTest\n project\n\n\n\n\nRight click \nTDDLabTest\n solution -\n \nProperties\n -\n \nCommon Properties\n -\n \nAdd New Reference\n\n\nChoose \nTDDLab\n -\n \nOK\n -\n \nOK\n\n\n\n\nStep 6. Run Tests\n\n\nClick \nTEST\n in menu bar -\n \nRun\n -\n `All Test (Ctrl + R, A)\n\n\nTest should be passed.\n\n\n\n\n2. Assertion Frameworks\n\n\n\n\nMicrosoft.VisualStudio.TestTools.CppUnitTestFramework\n\n\nevolutional/Chamois\n\n\n\n\n3. Test Frameworks\n\n\n\n\ngoogletest\n\n\n\n\nC++: IDE\n\n\n\n\nVisual Studio\n\n\nContent\n\n\n\u251c\u2500\u2500 1. Create new project\n\u251c\u2500\u2500 2. Search \n Replace\n\u251c\u2500\u2500 3. Navigation\n\u251c\u2500\u2500 4. Formatting\n\u251c\u2500\u2500 5. Debugging\n\u251c\u2500\u2500 6. Build \n Release\n\u2514\u2500\u2500 7. Git Integration\n\n\n\n\n4. Formatting\n\n\nCtrl + K / Ctrl + F\nCtrl + F / Ctrl + D\n\n\n\n\n6. Git in Visual Studio\n\n\nhttps://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Visual-Studio\n\n\nOnline IDE\n\n\n\n\ncodechef ide\n\n\n\n\nC++: Database\n\n\nSqlite with Visual Studio 2013\n\n\nStep 1\n: Create new project\n1.1 Create a new C++ Win32 Console application.\n\n\nStep 2:\n Download Sqlite DLL\n\n\n2.1. Download the native SQLite DLL from: http://sqlite.org/sqlite-dll-win32-x86-3070400.zip\n2.2. Unzip the DLL and DEF files and place the contents in your project\u2019s source folder (an easy way to find this is to right click on the tab and click the \u201cOpen Containing Folder\u201d menu item.\n\n\nStep 3:\n Build LIB file\n\n\n3.1. Open a \u201cDeveloper Command Prompt\u201d and navigate to your source folder. (If you can't find this tool, follow this post in stackoverflow \nWhere is Developer Command Prompt for VS2013?\n to create it)\n3.2. Create an import library using the following command line: LIB /DEF:sqlite3.def\n\n\nStep 4:\n Add Dependencies\n\n\n4.1. Add the library (i.e. sqlite3.lib) to your Project Properties -\n Configuration Properties -\n Linker -\n Input -\n Additional Dependencies.\n4.2. Download http://sqlite.org/sqlite-amalgamation-3070400.zip\n4.3. Unzip the sqlite3.h header file and place into your source directory.\n4.4. Include the the sqlite3.h header file in your source code.\n4.5. You will need to include the sqlite3.dll in the same directory as your program (or in a System Folder).\n\n\nStep 5:\n Run test code\n\n\n#include \nstdafx.h\n\n#include \nios\n\n#include \niostream\n\n#include \nsqlite3.h\n\n\nusing namespace std;\n\nint _tmain(int argc, _TCHAR* argv[])\n{\n   int rc;\n   char *error;\n\n   // Open Database\n   cout \n \nOpening MyDb.db ...\n \n endl;\n   sqlite3 *db;\n   rc = sqlite3_open(\nMyDb.db\n, \ndb);\n   if (rc)\n   {\n      cerr \n \nError opening SQLite3 database: \n \n sqlite3_errmsg(db) \n endl \n endl;\n      sqlite3_close(db);\n      return 1;\n   }\n   else\n   {\n      cout \n \nOpened MyDb.db.\n \n endl \n endl;\n   }\n\n   // Execute SQL\n   cout \n \nCreating MyTable ...\n \n endl;\n   const char *sqlCreateTable = \nCREATE TABLE MyTable (id INTEGER PRIMARY KEY, value STRING);\n;\n   rc = sqlite3_exec(db, sqlCreateTable, NULL, NULL, \nerror);\n   if (rc)\n   {\n      cerr \n \nError executing SQLite3 statement: \n \n sqlite3_errmsg(db) \n endl \n endl;\n      sqlite3_free(error);\n   }\n   else\n   {\n      cout \n \nCreated MyTable.\n \n endl \n endl;\n   }\n\n   // Execute SQL\n   cout \n \nInserting a value into MyTable ...\n \n endl;\n   const char *sqlInsert = \nINSERT INTO MyTable VALUES(NULL, 'A Value');\n;\n   rc = sqlite3_exec(db, sqlInsert, NULL, NULL, \nerror);\n   if (rc)\n   {\n      cerr \n \nError executing SQLite3 statement: \n \n sqlite3_errmsg(db) \n endl \n endl;\n      sqlite3_free(error);\n   }\n   else\n   {\n      cout \n \nInserted a value into MyTable.\n \n endl \n endl;\n   }\n\n   // Display MyTable\n   cout \n \nRetrieving values in MyTable ...\n \n endl;\n   const char *sqlSelect = \nSELECT * FROM MyTable;\n;\n   char **results = NULL;\n   int rows, columns;\n   sqlite3_get_table(db, sqlSelect, \nresults, \nrows, \ncolumns, \nerror);\n   if (rc)\n   {\n      cerr \n \nError executing SQLite3 query: \n \n sqlite3_errmsg(db) \n endl \n endl;\n      sqlite3_free(error);\n   }\n   else\n   {\n      // Display Table\n      for (int rowCtr = 0; rowCtr \n= rows; ++rowCtr)\n      {\n         for (int colCtr = 0; colCtr \n columns; ++colCtr)\n         {\n            // Determine Cell Position\n            int cellPosition = (rowCtr * columns) + colCtr;\n\n            // Display Cell Value\n            cout.width(12);\n            cout.setf(ios::left);\n            cout \n results[cellPosition] \n \n \n;\n         }\n\n         // End Line\n         cout \n endl;\n\n         // Display Separator For Header\n         if (0 == rowCtr)\n         {\n            for (int colCtr = 0; colCtr \n columns; ++colCtr)\n            {\n               cout.width(12);\n               cout.setf(ios::left);\n               cout \n \n~~~~~~~~~~~~ \n;\n            }\n            cout \n endl;\n         }\n      }\n   }\n   sqlite3_free_table(results);\n\n   // Close Database\n   cout \n \nClosing MyDb.db ...\n \n endl;\n   sqlite3_close(db);\n   cout \n \nClosed MyDb.db\n \n endl \n endl;\n\n   // Wait For User To Close Program\n   cout \n \nPlease press any key to exit the program ...\n \n endl;\n   cin.get();\n\n   return 0;\n}\n\n\n\n\n\n\n\n\n\n\n\n\nC++ Pointers: tutorialspoint", 
+            "text": "Java\n\n\nI can code Java, but... \n1\n\n\n\n\nBest Programming languages \n2\n\n\n\n\nInstallation \n3\n\n\n\n# cent os 6.5\nyum install java-1.7.0-openjdk-devel\n\n\n\n\nConcepts\n\n\n\nAnnotations\n\n\nTools\n\n\n\n\n\n\n\n\n\n\nBuild Tool\n\n\n\nTest\n\n\n\n\n\n\nGradle\n\n\nJUnit\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPatterns in Real Life\n\n\n\n\n\n\n\nFunny Story | Best Programming languages\n\n\n\n\n\n\n\nHow To Install Java on CentOS and Fedora\n\n\n\n\n\n\n\n\n\n\nJava: 101\n\n\n1. Install\n\n\nUbuntu\n\n\nStep 1. Download sdk\n\n\nhttp://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html\n\n\n\n\nStep 2. Create folder jvm\n\n\nsudo mkdir /usr/lib/jvm/\n\n\n\n\nStep 3. cd to folder downloads jdk and run command\n\n\nsudo mv jdk1.7.0_x/ /usr/lib/jvm/jdk1.7.0_x\n\n\n\n\nRun install java\n\n\nsudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.7.0_x/jre/bin/java 0\n\n\n\n\nAdd path jdk : /usr/lib/jvm/jdk1.7.0_x\n\n\nsu -\nnano /etc/environment\n\n\n\n\n2. Hello World \n1\n\n\npublic class HelloWorld {\n\n    public static void main(String[] args) {\n        // Prints \nHello, World\n to the terminal window.\n        System.out.println(\nHello, World\n);\n    }\n\n}\n\n\n\n\nJava: Data Structure\n\n\nJava: datetime\n\n\nCalendar c = Calendar.getInstance();\n\n\n\n\nJava: string, number\n\n\nConvert \n1\n\n\nString.valueOf(1000)\n\n\n\n\nMake a random\n\n\n// create a random number from 0 to 99\n(new Random()).nextInt(100)\n\n\n\n\nJava: collection\n\n\nSet\n\n\n\nimport java.util.HashSet;\nimport java.util.Set;\n\npublic class HelloWorld{\n\n     public static void main(String []args){\n         Set\nDog\n dogs = new  HashSet\nDog\n();\n         Dog dog1 = new Dog(\na\n, 1);\n         Dog dog2 = new Dog(\na\n, 2);\n         Dog dog3 = new Dog(\na\n, 1);\n         Dog dog4 = new Dog(\nb\n, 1);\n         dogs.add( dog1);\n         dogs.add( dog2);\n         dogs.add( dog3);\n         dogs.add( dog4);\n        System.out.println(dogs.size());\n     }\n}\n\n// 3\n\n\n\n\npublic class Dog {\n    public String name;\n    public int age;\n    public int value;\n    public Dog(String name, int age){\n        this.name = name;\n        this.age = age;\n        value = (this.name + String.valueOf(this.age)).hashCode();\n    }\n\n    @Override\n    public int hashCode() {\n        return value;\n    }\n\n    @Override\n    public boolean equals(Object obj) {\n        return (obj instanceof Dog \n ((Dog) obj).value == this.value);\n    }\n}\n\n\n\n\nList \n1\n\n\nList\nString\n places = Arrays.asList(\nBuenos Aires\n, \nC\u00f3rdoba\n, \nLa Plata\n);\n\n\n\n\nJava: Parallel\n\n\nThread\n\n\nTimer\n\n\nJava: Configuration\n\n\n-VM options : VM options are loaded from the IDE_HOME\\bin\\\n[bits][.exe].vmoptions file.\n[1]\n\n-ea : enable assertions\n\n\n-ea -D[FILE_NAME]=\n$PATH_DATA\n\n\n\n\n\nJava: Web with Spring\n\n\n\n\n\n  \nSpring helps development teams everywhere build simple, portable, fast and flexible JVM-based systems and applications.\n\n\n\n\n\nComponents\n\n\n\nSpring Boot\n: Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can \"just run\". We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need very little Spring configuration.\n\n\n\nSpring: Database\n\n\nDatabase Migration\n\n\nFlyway\n\n\nJava: IDE\n\n\nIntellIJ\n\n\n\u251c\u2500\u2500 1. Project Manager\n\u251c\u2500\u2500 2. Search \n Replace\n\u251c\u2500\u2500 3. Navigation\n\u251c\u2500\u2500 4. Formatting\n\u251c\u2500\u2500 5. Debugging\n\u251c\u2500\u2500 6. Build \n Release\n\u2514\u2500\u2500 7. Git Integration\n\n\n\n\n1. Project Manager\n\n\n1.1 Create New Project\n\n\n1.2 Import Maven Project\n\n\nhttps://www.jetbrains.com/help/idea/2016.1/importing-project-from-maven-model.html\n\n\n2. Search \n Replace\n\n\n\n\n\n\nGlobal Search\n\n\nShift Shift\n\n\n\n\n\n\n\n3. Navigation\n\n\n\n\n\n\nNext/Previous Error\n\n\nF2\n / \nShift + F2\n\n\n\n\n\n\n\n4. Formatting\n\n\n\n\n\n\nAuto Format\n\n\nCtrl + Alt + L\n\n\n\n\n\n\n\nJava: Package Manager\n\n\nGradle\n\n\n\n\nPlugins\n\n\nApplication plugin\n\n\nUsages\n\n\n1.\n Using the application plugin\n\n\nAdd this line in \nbuild.gradle\n\n\napply plugin: 'application'\n\n\n\n\n2.\n  Configure the application main class\n\n\nmainClassName = \norg.gradle.sample.Main\n\n\n\n\n\nJava: Build Tool\n\n\nApache Ant\n\n\n\n\nApache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other. The main known usage of Ant is the build of Java applications. Ant supplies a number of built-in tasks allowing to compile, assemble, test and run Java applications. Ant can also be used effectively to build non Java applications, for instance C or C++ applications. More generally, Ant can be used to pilot any type of process which can be described in terms of targets and tasks. \n1\n\n\nInstall Ant\n\n\nDownload and extract Apache Ant 1.9.6\n\n\nwget http://mirrors.viethosting.vn/apache//ant/binaries/apache-ant-1.9.6-bin.tar.gz\ntar -xzf apache-ant-1.9.6-bin.tar.gz\n\n\n\n\nSet path to ant folder\n\n\nBuild Ant through proxy\n\n\n\nRequirement: 1.9.5+\n\n\nAdd the following lines into \nbuild.xml\n\n\ntarget name=\nivy-init\n depends=\nivy-proxy, ivy-probe-antlib, ivy-init-antlib\n description=\n--\n initialise Ivy settings\n\n  \nivy:settings file=\n${ivy.dir}/ivysettings.xml\n /\n\n  \n/target\n\n \ntarget name=\nivy-proxy\n description=\n--\nProxy Ivy settings\n\n  \nproperty name=\nproxy.host\n value=\nproxy.com\n /\n\n  \nproperty name=\nproxy.port\n value=\n8080\n /\n\n  \nproperty name=\nproxy.user\n value=\nuser\n /\n\n  \nproperty name=\nproxy.password\n value=\npassword\n /\n\n  \nsetproxy\n    proxyhost=\n${proxy.host}\n\n    proxyport=\n${proxy.port}\n\n    proxyuser=\n${proxy.user}\n\n    proxypassword=\n${proxy.password}\n /\n\n \n/target\n\n\n\n\n\nJava: Errors\n\n\nTwo Many Open Files \n1\n \n2\n\n\nEdit  \n/etc/sysctl.conf\n\n\nfs.file-max = 100000\n\n\n\n\nSpring, http://www.tomcatexpert.com/blog/2010/04/01/configuring-jdbc-pool-high-concurrency\n\n\nJava: Production (Docker)\n\n\nProduction with \njava\n\n\nBase Image: [java]\n/java\n\n\nDocker Folder\n\n\nyour-app/\n\u251c\u2500\u2500 app\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 bin\n\u2502   \u251c\u2500\u2500\u2500\u2500\u2500 your_app.sh\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 lib\n\u251c\u2500\u2500 Dockerfile\n\u2514\u2500\u2500 run.sh\n\n\n\n\nDockerfile\n\n\nFROM java:7\n\nCOPY run.sh run.sh\n\n\n\n\nrun.sh\n\n\ncd /app/bin\nchmod u+x your_app.sh\n./your_app.sh\n\n\n\n\nCompose\n\n\n service:\n  build: ./your_app\n  command: 'bash run.sh'\n\n\n\n\n\n\n\n\n\n\n\n\nLinux Increase The Maximum Number Of Open Files / File Descriptors (FD)\n\n\n\n\n\n\n[java 1=\"Too\" 2=\"many\" 3=\"open\" 4=\"files\" 5=\"Spring\" 6=\"Hibernate\" 7=\"Tomcat\" language=\".net.SocketException:\"]\n/java", 
             "title": "Home"
         }, 
         {
-            "location": "/#cc", 
-            "text": "Visual Studio 2013  Install Extension  VsVim  googletest   guide", 
-            "title": "C/C++"
+            "location": "/#java", 
+            "text": "I can code Java, but...  1   Best Programming languages  2", 
+            "title": "Java"
         }, 
         {
-            "location": "/#folder-structure", 
-            "text": "with VS 2013  solution\n\u2502   README.md\n\u2502\n|\u2500\u2500\u2500project1\n|   \u2502   file011.txt\n|   \u2502   file012.txt\n|   \u2502\n|\u2500\u2500\u2500project2\n|   \u2502   file011.txt\n|   \u2502   file012.txt\n|   \u2502  Format:  Ctrl + K, Ctrl + D", 
-            "title": "Folder Structure"
-        }, 
-        {
-            "location": "/#c-style", 
-            "text": "[wonderplugin_slider id=\"5\"]", 
-            "title": "C++ Style"
-        }, 
-        {
-            "location": "/#tools", 
-            "text": "Documentation   \nIDE       Programming Tutorials    Clion ,  Visual Studio           \nBuild Tool  \nTest  \nLogging      Google Test , Chamois , VS UnitTest", 
-            "title": "Tools"
-        }, 
-        {
-            "location": "/#c-101", 
+            "location": "/#java-101", 
             "text": "", 
-            "title": "C++: 101"
+            "title": "Java: 101"
         }, 
         {
-            "location": "/#1-installation", 
-            "text": "Install Visual Studio 2013", 
-            "title": "1. Installation"
-        }, 
-        {
-            "location": "/#2-hello-world", 
-            "text": "#include  iostream \nusing namespace std;\n\nint main() {\n    cout    hello world ;\n}", 
-            "title": "2. Hello World"
-        }, 
-        {
-            "location": "/#c-use-c", 
+            "location": "/#1-install", 
             "text": "", 
-            "title": "C++: Use C++"
+            "title": "1. Install"
         }, 
         {
-            "location": "/#1-naming-1", 
-            "text": "variable_name_like_this\nclass_data_memeber_name_like_this_\nkConstantNamesLikeThis\nClassNameLikeThis\nfilenamelikethis_myusefulclass_test.cc", 
-            "title": "1. Naming 1"
+            "location": "/#ubuntu", 
+            "text": "Step 1. Download sdk  http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html  Step 2. Create folder jvm  sudo mkdir /usr/lib/jvm/  Step 3. cd to folder downloads jdk and run command  sudo mv jdk1.7.0_x/ /usr/lib/jvm/jdk1.7.0_x", 
+            "title": "Ubuntu"
         }, 
         {
-            "location": "/#2-comment-1", 
+            "location": "/#run-install-java", 
+            "text": "sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.7.0_x/jre/bin/java 0  Add path jdk : /usr/lib/jvm/jdk1.7.0_x  su -\nnano /etc/environment", 
+            "title": "Run install java"
+        }, 
+        {
+            "location": "/#2-hello-world-1", 
+            "text": "public class HelloWorld {\n\n    public static void main(String[] args) {\n        // Prints  Hello, World  to the terminal window.\n        System.out.println( Hello, World );\n    }\n\n}", 
+            "title": "2. Hello World 1"
+        }, 
+        {
+            "location": "/#java-data-structure", 
             "text": "", 
-            "title": "2. Comment 1"
+            "title": "Java: Data Structure"
         }, 
         {
-            "location": "/#21-class-comment", 
-            "text": "// Iterates over the contents of a GargantuanTable.\n// Example:\n//    GargantuanTableIterator* iter = table- NewIterator();\n//    for (iter- Seek( foo ); !iter- done(); iter- Next()) {\n//      process(iter- key(), iter- value());\n//    }\n//    delete iter;\nclass GargantuanTableIterator {\n  ...\n};", 
-            "title": "2.1 Class Comment"
+            "location": "/#java-datetime", 
+            "text": "Calendar c = Calendar.getInstance();", 
+            "title": "Java: datetime"
         }, 
         {
-            "location": "/#22-todo-comment", 
-            "text": "// TODO(kl@gmail.com): Use a  *  here for concatenation operator.\n// TODO(Zeke) change this to use relations.", 
-            "title": "2.2 Todo Comment"
+            "location": "/#java-string-number", 
+            "text": "Convert  1  String.valueOf(1000)  Make a random  // create a random number from 0 to 99\n(new Random()).nextInt(100)", 
+            "title": "Java: string, number"
         }, 
         {
-            "location": "/#c-data-structure", 
+            "location": "/#java-collection", 
             "text": "", 
-            "title": "C++: Data Structure"
-        }, 
-        {
-            "location": "/#stack", 
-            "text": "", 
-            "title": "Stack"
-        }, 
-        {
-            "location": "/#quote", 
-            "text": "", 
-            "title": "Quote"
-        }, 
-        {
-            "location": "/#linked-list", 
-            "text": "", 
-            "title": "Linked List"
-        }, 
-        {
-            "location": "/#graph", 
-            "text": "", 
-            "title": "Graph"
-        }, 
-        {
-            "location": "/#array", 
-            "text": "", 
-            "title": "Array"
-        }, 
-        {
-            "location": "/#deque", 
-            "text": "", 
-            "title": "Deque"
-        }, 
-        {
-            "location": "/#forward_list", 
-            "text": "", 
-            "title": "Forward_list"
-        }, 
-        {
-            "location": "/#list", 
-            "text": "http://www.slideshare.net/sshinchan/single-linked-list", 
-            "title": "List"
-        }, 
-        {
-            "location": "/#map", 
-            "text": "", 
-            "title": "Map"
+            "title": "Java: collection"
         }, 
         {
             "location": "/#set", 
-            "text": "", 
+            "text": "import java.util.HashSet;\nimport java.util.Set;\n\npublic class HelloWorld{\n\n     public static void main(String []args){\n         Set Dog  dogs = new  HashSet Dog ();\n         Dog dog1 = new Dog( a , 1);\n         Dog dog2 = new Dog( a , 2);\n         Dog dog3 = new Dog( a , 1);\n         Dog dog4 = new Dog( b , 1);\n         dogs.add( dog1);\n         dogs.add( dog2);\n         dogs.add( dog3);\n         dogs.add( dog4);\n        System.out.println(dogs.size());\n     }\n}\n\n// 3  public class Dog {\n    public String name;\n    public int age;\n    public int value;\n    public Dog(String name, int age){\n        this.name = name;\n        this.age = age;\n        value = (this.name + String.valueOf(this.age)).hashCode();\n    }\n\n    @Override\n    public int hashCode() {\n        return value;\n    }\n\n    @Override\n    public boolean equals(Object obj) {\n        return (obj instanceof Dog   ((Dog) obj).value == this.value);\n    }\n}", 
             "title": "Set"
         }, 
         {
-            "location": "/#stack_1", 
+            "location": "/#list-1", 
+            "text": "List String  places = Arrays.asList( Buenos Aires ,  C\u00f3rdoba ,  La Plata );", 
+            "title": "List 1"
+        }, 
+        {
+            "location": "/#java-parallel", 
+            "text": "Thread", 
+            "title": "Java: Parallel"
+        }, 
+        {
+            "location": "/#timer", 
             "text": "", 
-            "title": "Stack"
+            "title": "Timer"
         }, 
         {
-            "location": "/#unordered_map", 
+            "location": "/#java-configuration", 
+            "text": "-VM options : VM options are loaded from the IDE_HOME\\bin\\ [bits][.exe].vmoptions file. [1] \n-ea : enable assertions  -ea -D[FILE_NAME]= $PATH_DATA", 
+            "title": "Java: Configuration"
+        }, 
+        {
+            "location": "/#java-web-with-spring", 
+            "text": "Spring helps development teams everywhere build simple, portable, fast and flexible JVM-based systems and applications.", 
+            "title": "Java: Web with Spring"
+        }, 
+        {
+            "location": "/#spring-database", 
             "text": "", 
-            "title": "unordered_map"
+            "title": "Spring: Database"
         }, 
         {
-            "location": "/#unordered_set", 
+            "location": "/#database-migration", 
+            "text": "Flyway", 
+            "title": "Database Migration"
+        }, 
+        {
+            "location": "/#java-ide", 
             "text": "", 
-            "title": "unordered_set"
+            "title": "Java: IDE"
         }, 
         {
-            "location": "/#vector", 
-            "text": "", 
-            "title": "vector"
+            "location": "/#intellij", 
+            "text": "\u251c\u2500\u2500 1. Project Manager\n\u251c\u2500\u2500 2. Search   Replace\n\u251c\u2500\u2500 3. Navigation\n\u251c\u2500\u2500 4. Formatting\n\u251c\u2500\u2500 5. Debugging\n\u251c\u2500\u2500 6. Build   Release\n\u2514\u2500\u2500 7. Git Integration", 
+            "title": "IntellIJ"
         }, 
         {
-            "location": "/#datetime", 
-            "text": "http://www.tutorialspoint.com/cplusplus/cpp_date_time.htm", 
-            "title": "datetime"
+            "location": "/#1-project-manager", 
+            "text": "1.1 Create New Project  1.2 Import Maven Project  https://www.jetbrains.com/help/idea/2016.1/importing-project-from-maven-model.html", 
+            "title": "1. Project Manager"
         }, 
         {
-            "location": "/#c-string", 
-            "text": "", 
-            "title": "C++: String"
+            "location": "/#2-search-replace", 
+            "text": "Global Search  Shift Shift", 
+            "title": "2. Search &amp; Replace"
         }, 
         {
-            "location": "/#string-basic1", 
-            "text": "#include  iostream \n#include  string \nusing namespace std ;\n\n// assign a string\nstring s1 =  www.java2s.com\\n ;\ncout   s1;\n\n// input a string\nstring s2;\ncin   s2;\n\n// concatenate two strings\nstring s_c = s1 + s2;\n\n// compare strings\ns1 == s2;", 
-            "title": "String Basic1"
-        }, 
-        {
-            "location": "/#c-pointer", 
-            "text": "", 
-            "title": "C++: Pointer"
-        }, 
-        {
-            "location": "/#pointer-1", 
-            "text": "A pointer is a variable whose value is the address of another variable. Like any variable or constant, you must declare a pointer before you can work with it.  The general form of a pointer variable declaration is:  type *variable_name;\n// example\nint    *ip;    // pointer to an integer\ndouble *dp;    // pointer to a double\nfloat  *fp;    // pointer to a float\nchar   *ch;    // pointer to character", 
-            "title": "Pointer 1"
-        }, 
-        {
-            "location": "/#pointer-lab", 
-            "text": "#include  iostream \nusing namespace std;\n\n/*\n * Look at these lines\n */\nint* a;\na = new int[3];\na[0] = 10;\na[1] = 2;\ncout    Address of pointer a:  a =      a   endl;\ncout    Value   of pointer a:  a =     a   endl   endl;\ncout    Address of a[0]:  a[0] =      a[0]   endl;\ncout    Value   of a[0]: a[0]  =     a[0]    endl;\ncout    Value   of a[0]: *a    =     *a      endl   endl;\ncout    Address of a[1]:  a[1] =      a[1]   endl;\ncout    Value   of a[1]: a[1]  =     a[1]    endl;\ncout    Value   of a[1]: *(a+1)=     *(a+1)  endl   endl;\ncout    Address of a[2]:  a[2] =      a[2]   endl;\ncout    Value   of a[2]: a[2]  =     a[2]    endl;\ncout    Value   of a[2]: *(a+2)=     *(a+2)  endl   endl;  Result:  [code lang=\"text\"]\nAddress of pointer a:  a = 008FF770\nValue   of pointer a:  a = 00C66ED0  Address of a[0]:  a[0] = 00C66ED0\nValue   of a[0]: a[0]  = 10\nValue   of a[0]: *a    = 10  Address of a[1]:  a[1] = 00C66ED4\nValue   of a[1]: a[1]  = 2\nValue   of a[1]: *(a+1)= 2  Address of a[2]:  a[2] = 00C66ED8\nValue   of a[2]: a[2]  = -842150451\nValue   of a[2]: *(a+2)= -842150451  \n```cpp\n/*\n * ? How about this\n */\na[3] = 8;\n// it will throw some think like this\n// Stack around the variable 'a' was corrupted.", 
-            "title": "Pointer Lab"
-        }, 
-        {
-            "location": "/#c-oop", 
-            "text": "", 
-            "title": "C++: OOP"
-        }, 
-        {
-            "location": "/#c-template", 
-            "text": "", 
-            "title": "C++: Template"
-        }, 
-        {
-            "location": "/#function-template", 
-            "text": "#include  iostream \n#include  string \n\nusing namespace std;\n\ntemplate  typename T \n\nT Max(T a, T b)\n{\n    return a   b ? b : a;\n}\n\nint main()\n{\n\n    int i = 39;\n    int j = 20;\n    cout   Max(i, j)   endl;\n\n    double f1 = 13.5;\n    double f2 = 20.7;\n    cout   Max(f1, f2)   endl;\n\n    string s1 =  Hello ;\n    string s2 =  World ;\n    cout   Max(s1, s2)   endl;\n\n    double n1 = 20.3;\n    float n2 = 20.4;\n    // it will show an error\n    // Error: no instance of function template  Max  matches the argument list\n    //        arguments types are: (double, float)\n    cout   Max(n1, n2)   endl;\n    return 0;\n}", 
-            "title": "Function Template"
-        }, 
-        {
-            "location": "/#c-test", 
-            "text": "", 
-            "title": "C++: Test"
-        }, 
-        {
-            "location": "/#1-create-unit-test-in-visual-studio-2013", 
-            "text": "", 
-            "title": "1. Create Unit Test in Visual Studio 2013"
-        }, 
-        {
-            "location": "/#step-1-create-tddlab-solution", 
-            "text": "1.1  Open Visual Studio 2013  1.2   File  -    New Project...  -    Click  Visual C++  -   Win32    Choose  Win32 Console Application    Fill to  Name  input text:  TDDLab    Click  OK  -   Next    1.3  In project settings, remove options:   Precompiled Header  Securirty Develoment Lifecyde(SQL) check   1.4  Click  Finish", 
-            "title": "Step 1. Create TDDLab Solution"
-        }, 
-        {
-            "location": "/#step-2-create-counter-class", 
-            "text": "2.1  Right-click  TDDLab  -   Add  -   Class...  2.2  Choose  Visual C++  -   C++ Class  -   Add  2.3  Fill in  Class name  box  Counter  -   Finish  2.4  In  Counter.h  file, add this below function  int add(int a, int b);  2.5  In  Counter.cpp , add this below function  int Counter::add(int a, int b) {\n  return a+b;\n}  Your  Counter  class should look like this", 
-            "title": "Step 2. Create Counter Class"
-        }, 
-        {
-            "location": "/#step-3-create-tddlabtest-project", 
-            "text": "3.1  Right-click  Solution 'TDDLab'  -   Add  -   New Project...  3.2  Choose  Visual C++  -   Test  3.3  Choose  Native Unit Test Project  3.4  Fill to  Name  input text:  TDDLabTest", 
-            "title": "Step 3. Create TDDLabTest Project"
-        }, 
-        {
-            "location": "/#step-4-write-unit-test", 
-            "text": "4.1   In  unittest1.cpp , add header of  Counter  class  #include  ../TDDLab/Counter.h   4.2  In  TEST_METHOD  function  {\n  Counter counter;\n  Assert::AreEqual(2, counter.add(1, 1));\n}  4.3  Click  TEST  in menu bar -   Run  -  `All Test (Ctrl + R, A)", 
-            "title": "Step 4. Write unit test"
-        }, 
-        {
-            "location": "/#step-5-fix-error-lnk-2019-unresolved-external-symbol", 
-            "text": "5.1  Change  Configuration Type  of  TDDLab  project   Right click   TDDLab  project -   Properties  General  -   Configuration Type  -   Static library (.lib)  -   OK   5.2  Add Reference to  TDDLabTest  project   Right click  TDDLabTest  solution -   Properties  -   Common Properties  -   Add New Reference  Choose  TDDLab  -   OK  -   OK", 
-            "title": "Step 5. Fix error LNK 2019: unresolved external symbol"
-        }, 
-        {
-            "location": "/#step-6-run-tests", 
-            "text": "Click  TEST  in menu bar -   Run  -  `All Test (Ctrl + R, A)  Test should be passed.", 
-            "title": "Step 6. Run Tests"
-        }, 
-        {
-            "location": "/#2-assertion-frameworks", 
-            "text": "Microsoft.VisualStudio.TestTools.CppUnitTestFramework  evolutional/Chamois", 
-            "title": "2. Assertion Frameworks"
-        }, 
-        {
-            "location": "/#3-test-frameworks", 
-            "text": "googletest", 
-            "title": "3. Test Frameworks"
-        }, 
-        {
-            "location": "/#c-ide", 
-            "text": "", 
-            "title": "C++: IDE"
-        }, 
-        {
-            "location": "/#visual-studio", 
-            "text": "", 
-            "title": "Visual Studio"
-        }, 
-        {
-            "location": "/#content", 
-            "text": "\u251c\u2500\u2500 1. Create new project\n\u251c\u2500\u2500 2. Search   Replace\n\u251c\u2500\u2500 3. Navigation\n\u251c\u2500\u2500 4. Formatting\n\u251c\u2500\u2500 5. Debugging\n\u251c\u2500\u2500 6. Build   Release\n\u2514\u2500\u2500 7. Git Integration", 
-            "title": "Content"
+            "location": "/#3-navigation", 
+            "text": "Next/Previous Error  F2  /  Shift + F2", 
+            "title": "3. Navigation"
         }, 
         {
             "location": "/#4-formatting", 
-            "text": "Ctrl + K / Ctrl + F\nCtrl + F / Ctrl + D", 
+            "text": "Auto Format  Ctrl + Alt + L", 
             "title": "4. Formatting"
         }, 
         {
-            "location": "/#6-git-in-visual-studio", 
-            "text": "https://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Visual-Studio", 
-            "title": "6. Git in Visual Studio"
-        }, 
-        {
-            "location": "/#online-ide", 
-            "text": "codechef ide", 
-            "title": "Online IDE"
-        }, 
-        {
-            "location": "/#c-database", 
+            "location": "/#java-package-manager", 
             "text": "", 
-            "title": "C++: Database"
+            "title": "Java: Package Manager"
         }, 
         {
-            "location": "/#sqlite-with-visual-studio-2013", 
-            "text": "Step 1 : Create new project\n1.1 Create a new C++ Win32 Console application.  Step 2:  Download Sqlite DLL  2.1. Download the native SQLite DLL from: http://sqlite.org/sqlite-dll-win32-x86-3070400.zip\n2.2. Unzip the DLL and DEF files and place the contents in your project\u2019s source folder (an easy way to find this is to right click on the tab and click the \u201cOpen Containing Folder\u201d menu item.  Step 3:  Build LIB file  3.1. Open a \u201cDeveloper Command Prompt\u201d and navigate to your source folder. (If you can't find this tool, follow this post in stackoverflow  Where is Developer Command Prompt for VS2013?  to create it)\n3.2. Create an import library using the following command line: LIB /DEF:sqlite3.def  Step 4:  Add Dependencies  4.1. Add the library (i.e. sqlite3.lib) to your Project Properties -  Configuration Properties -  Linker -  Input -  Additional Dependencies.\n4.2. Download http://sqlite.org/sqlite-amalgamation-3070400.zip\n4.3. Unzip the sqlite3.h header file and place into your source directory.\n4.4. Include the the sqlite3.h header file in your source code.\n4.5. You will need to include the sqlite3.dll in the same directory as your program (or in a System Folder).  Step 5:  Run test code  #include  stdafx.h \n#include  ios \n#include  iostream \n#include  sqlite3.h \n\nusing namespace std;\n\nint _tmain(int argc, _TCHAR* argv[])\n{\n   int rc;\n   char *error;\n\n   // Open Database\n   cout    Opening MyDb.db ...    endl;\n   sqlite3 *db;\n   rc = sqlite3_open( MyDb.db ,  db);\n   if (rc)\n   {\n      cerr    Error opening SQLite3 database:     sqlite3_errmsg(db)   endl   endl;\n      sqlite3_close(db);\n      return 1;\n   }\n   else\n   {\n      cout    Opened MyDb.db.    endl   endl;\n   }\n\n   // Execute SQL\n   cout    Creating MyTable ...    endl;\n   const char *sqlCreateTable =  CREATE TABLE MyTable (id INTEGER PRIMARY KEY, value STRING); ;\n   rc = sqlite3_exec(db, sqlCreateTable, NULL, NULL,  error);\n   if (rc)\n   {\n      cerr    Error executing SQLite3 statement:     sqlite3_errmsg(db)   endl   endl;\n      sqlite3_free(error);\n   }\n   else\n   {\n      cout    Created MyTable.    endl   endl;\n   }\n\n   // Execute SQL\n   cout    Inserting a value into MyTable ...    endl;\n   const char *sqlInsert =  INSERT INTO MyTable VALUES(NULL, 'A Value'); ;\n   rc = sqlite3_exec(db, sqlInsert, NULL, NULL,  error);\n   if (rc)\n   {\n      cerr    Error executing SQLite3 statement:     sqlite3_errmsg(db)   endl   endl;\n      sqlite3_free(error);\n   }\n   else\n   {\n      cout    Inserted a value into MyTable.    endl   endl;\n   }\n\n   // Display MyTable\n   cout    Retrieving values in MyTable ...    endl;\n   const char *sqlSelect =  SELECT * FROM MyTable; ;\n   char **results = NULL;\n   int rows, columns;\n   sqlite3_get_table(db, sqlSelect,  results,  rows,  columns,  error);\n   if (rc)\n   {\n      cerr    Error executing SQLite3 query:     sqlite3_errmsg(db)   endl   endl;\n      sqlite3_free(error);\n   }\n   else\n   {\n      // Display Table\n      for (int rowCtr = 0; rowCtr  = rows; ++rowCtr)\n      {\n         for (int colCtr = 0; colCtr   columns; ++colCtr)\n         {\n            // Determine Cell Position\n            int cellPosition = (rowCtr * columns) + colCtr;\n\n            // Display Cell Value\n            cout.width(12);\n            cout.setf(ios::left);\n            cout   results[cellPosition]      ;\n         }\n\n         // End Line\n         cout   endl;\n\n         // Display Separator For Header\n         if (0 == rowCtr)\n         {\n            for (int colCtr = 0; colCtr   columns; ++colCtr)\n            {\n               cout.width(12);\n               cout.setf(ios::left);\n               cout    ~~~~~~~~~~~~  ;\n            }\n            cout   endl;\n         }\n      }\n   }\n   sqlite3_free_table(results);\n\n   // Close Database\n   cout    Closing MyDb.db ...    endl;\n   sqlite3_close(db);\n   cout    Closed MyDb.db    endl   endl;\n\n   // Wait For User To Close Program\n   cout    Please press any key to exit the program ...    endl;\n   cin.get();\n\n   return 0;\n}      C++ Pointers: tutorialspoint", 
-            "title": "Sqlite with Visual Studio 2013"
+            "location": "/#gradle", 
+            "text": "", 
+            "title": "Gradle"
+        }, 
+        {
+            "location": "/#plugins", 
+            "text": "", 
+            "title": "Plugins"
+        }, 
+        {
+            "location": "/#application-plugin", 
+            "text": "Usages  1.  Using the application plugin  Add this line in  build.gradle  apply plugin: 'application'  2.   Configure the application main class  mainClassName =  org.gradle.sample.Main", 
+            "title": "Application plugin"
+        }, 
+        {
+            "location": "/#java-build-tool", 
+            "text": "", 
+            "title": "Java: Build Tool"
+        }, 
+        {
+            "location": "/#apache-ant", 
+            "text": "Apache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other. The main known usage of Ant is the build of Java applications. Ant supplies a number of built-in tasks allowing to compile, assemble, test and run Java applications. Ant can also be used effectively to build non Java applications, for instance C or C++ applications. More generally, Ant can be used to pilot any type of process which can be described in terms of targets and tasks.  1", 
+            "title": "Apache Ant"
+        }, 
+        {
+            "location": "/#install-ant", 
+            "text": "Download and extract Apache Ant 1.9.6  wget http://mirrors.viethosting.vn/apache//ant/binaries/apache-ant-1.9.6-bin.tar.gz\ntar -xzf apache-ant-1.9.6-bin.tar.gz  Set path to ant folder", 
+            "title": "Install Ant"
+        }, 
+        {
+            "location": "/#java-errors", 
+            "text": "", 
+            "title": "Java: Errors"
+        }, 
+        {
+            "location": "/#two-many-open-files-1-2", 
+            "text": "Edit   /etc/sysctl.conf  fs.file-max = 100000  Spring, http://www.tomcatexpert.com/blog/2010/04/01/configuring-jdbc-pool-high-concurrency", 
+            "title": "Two Many Open Files 1 2"
+        }, 
+        {
+            "location": "/#java-production-docker", 
+            "text": "Production with  java  Base Image: [java] /java  Docker Folder  your-app/\n\u251c\u2500\u2500 app\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 bin\n\u2502   \u251c\u2500\u2500\u2500\u2500\u2500 your_app.sh\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 lib\n\u251c\u2500\u2500 Dockerfile\n\u2514\u2500\u2500 run.sh  Dockerfile  FROM java:7\n\nCOPY run.sh run.sh  run.sh  cd /app/bin\nchmod u+x your_app.sh\n./your_app.sh  Compose   service:\n  build: ./your_app\n  command: 'bash run.sh'      Linux Increase The Maximum Number Of Open Files / File Descriptors (FD)    [java 1=\"Too\" 2=\"many\" 3=\"open\" 4=\"files\" 5=\"Spring\" 6=\"Hibernate\" 7=\"Tomcat\" language=\".net.SocketException:\"] /java", 
+            "title": "Java: Production (Docker)"
         }
     ]
 }

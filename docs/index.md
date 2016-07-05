@@ -1,453 +1,233 @@
-# C/C++
+# Java
 
-Visual Studio 2013
+I can code Java, but... <sup id="fnref-1452-2"><a href="#fn-1452-2" rel="footnote">1</a></sup>
 
-[Install Extension](https://msdn.microsoft.com/en-us/library/vstudio/dd293639(v=vs.100).aspx)
+<img src="http://i.imgur.com/9FD6bRh.png" alt="" />
 
-[VsVim](https://visualstudiogallery.msdn.microsoft.com/59ca71b3-a4a3-46ca-8fe1-0e90e3f79329)
+Best Programming languages <sup id="fnref-1452-3"><a href="#fn-1452-3" rel="footnote">2</a></sup>
 
+<img src="https://lh3.googleusercontent.com/I0vhc1CY8e7wIzUFw4D9bdv6q3xN3fMX5muciRQKGRuDJVwvYeGI=w591-h960-no" alt="" />
 
-[googletest](https://code.google.com/p/googletest/) <small>[guide](http://www.bogotobogo.com/cplusplus/google_unit_test_gtest.php)</small>
-
-### Folder Structure
-
-with VS 2013
+<h3>Installation <sup id="fnref-1452-1"><a href="#fn-1452-1" rel="footnote">3</a></sup></h3>
 
 ```
-solution
-│   README.md
-│
-|───project1
-|   │   file011.txt
-|   │   file012.txt
-|   │
-|───project2
-|   │   file011.txt
-|   │   file012.txt
-|   │
+# cent os 6.5
+yum install java-1.7.0-openjdk-devel
 ```
 
-Format: `Ctrl + K, Ctrl + D`
+<h3>Concepts</h3>
 
-### C++ Style
+Annotations
 
-[wonderplugin_slider id="5"]
-
-<div style="clear:both; height:80px;"></div>
-
-### Tools
+<h3>Tools</h3>
 
 <table>
 <tbody>
 <tr>
-<td style="text-align:center;width:33%;">
-<img src="http://icons.iconarchive.com/icons/graphicloads/polygon/32/book-icon.png"/>
-Documentation
-</td>
-<td style="text-align:center;width:33%;">
-<img src="http://icons.iconarchive.com/icons/apathae/wren/32/Utilities-icon.png"/>
-IDE</td>
-<td style="text-align:center;width:33%;">
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-<a href="http://www.cprogramming.com/tutorial.html">Programming Tutorials</a></td>
-</td>
-<td style="text-align:center;">
-<a href="https://www.jetbrains.com/clion/">Clion</a>, <a href="https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx">Visual Studio</a>
-</td>
-<td style="text-align:center;">
-</tr>
-</tbody>
-</table>
-
-<br/>
-
-<table>
-<tbody>
-<tr>
-<td style="text-align:center;width:33%;"><img src="https://cdn2.iconfinder.com/data/icons/ballicons-2-free/100/wrench-32.png" alt="" />
+<td style="text-align:center;width:50%;"><img src="https://cdn2.iconfinder.com/data/icons/ballicons-2-free/100/wrench-32.png" alt="" />
 Build Tool</td>
-<td style="text-align:center;width:33%;"><img src="http://icons.iconarchive.com/icons/graphicloads/polygon/32/check-2-icon.png" />
+<td style="text-align:center;width:50%;"><img src="http://icons.iconarchive.com/icons/graphicloads/polygon/32/check-2-icon.png" alt="" />
 Test</td>
-<td style="text-align:center;width:33%;"><img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/32/Mimetypes-text-x-log-icon.png" />
-Logging</td>
 </tr>
 <tr>
-<td style="text-align:center;"><a href="" target="_blank"></a></td>
-<td style="text-align:center;">
-<a href="https://code.google.com/p/googletest/" target="_blank">Google Test</a>,
-<a href="https://github.com/evolutional/Chamois" target="_blank">Chamois</a>,
-<a href="https://www.visualstudio.com/en-us/get-started/code/create-and-run-unit-tests-vs" target="_blank">VS UnitTest</a>
-</td>
-<td style="text-align:center;">
+<td style="text-align:center;"><a href="https://gradle.org/" target="_blank">Gradle</a></td>
+<td style="text-align:center;"><a href="http://junit.org/" target="_blank">JUnit</a></td>
 </tr>
 </tbody>
 </table>
 
-# C++: 101
+<div class="footnotes">
+<hr />
+<ol>
 
-# 1. Installation
+<li id="fn-1452-2">
+<a href="http://www.codeproject.com/Articles/29036/Patterns-in-Real-Life">Patterns in Real Life</a>&#160;<a href="#fnref-1452-2" rev="footnote">&#8617;</a>
+</li>
 
-* Install Visual Studio 2013
+<li id="fn-1452-3">
+<a href="http://biblipole.com/top-rated/best-programming-languages-771">Funny Story | Best Programming languages</a>&#160;<a href="#fnref-1452-3" rev="footnote">&#8617;</a>
+</li>
 
-# 2. Hello World
+<li id="fn-1452-1">
+<a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora">How To Install Java on CentOS and Fedora</a>&#160;<a href="#fnref-1452-1" rev="footnote">&#8617;</a>
+</li>
 
-```cpp
-#include <iostream>
-using namespace std;
+</ol>
+</div>
 
-int main() {
-    cout << "hello world";
+# Java: 101
+
+# 1. Install
+
+## Ubuntu
+
+Step 1. Download sdk
+
+```
+http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+```
+
+Step 2. Create folder jvm
+
+```
+sudo mkdir /usr/lib/jvm/
+```
+
+Step 3. cd to folder downloads jdk and run command
+
+```
+sudo mv jdk1.7.0_x/ /usr/lib/jvm/jdk1.7.0_x
+```
+
+### Run install java
+```
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.7.0_x/jre/bin/java 0
+```
+
+Add path jdk : /usr/lib/jvm/jdk1.7.0_x
+
+```
+su -
+nano /etc/environment
+```
+
+# 2. Hello World [^1]
+
+```java
+public class HelloWorld {
+
+    public static void main(String[] args) {
+        // Prints "Hello, World" to the terminal window.
+        System.out.println("Hello, World");
+    }
+
 }
 ```
 
-# C++: Use C++
+[^1]: [HelloWorld.java](http://introcs.cs.princeton.edu/java/11hello/HelloWorld.java.html)
 
-## 1. Naming [^1]
+# Java: Data Structure
+
+# Java: datetime
 
 ```
-variable_name_like_this
-class_data_memeber_name_like_this_
-kConstantNamesLikeThis
-ClassNameLikeThis
-filenamelikethis_myusefulclass_test.cc
+Calendar c = Calendar.getInstance();
 ```
 
-## 2. Comment [^1]
+# Java: string, number
 
-### 2.1 Class Comment
+Convert [^1]
 
-```cpp
-// Iterates over the contents of a GargantuanTable.
-// Example:
-//    GargantuanTableIterator* iter = table->NewIterator();
-//    for (iter->Seek("foo"); !iter->done(); iter->Next()) {
-//      process(iter->key(), iter->value());
-//    }
-//    delete iter;
-class GargantuanTableIterator {
-  ...
-};
+```java
+String.valueOf(1000)
 ```
 
-### 2.2 Todo Comment
+Make a random
 
-```cpp
-// TODO(kl@gmail.com): Use a "*" here for concatenation operator.
-// TODO(Zeke) change this to use relations.
+```java
+// create a random number from 0 to 99
+(new Random()).nextInt(100)
 ```
 
-[^1]: [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming)
+[^1]: [How to convert from int to String?](http://stackoverflow.com/questions/4105331/how-to-convert-from-int-to-string)
 
-# C++: Data Structure
-
-## Stack
-
-## Quote
-
-## Linked List
-
-## Graph
-
-
-## Array
-
-## Deque
-
-## Forward_list
-
-## List
-
-http://www.slideshare.net/sshinchan/single-linked-list
-
-# Map
+# Java: collection
 
 # Set
 
-# Stack
+```java
 
-# unordered_map
+import java.util.HashSet;
+import java.util.Set;
 
-# unordered_set
+public class HelloWorld{
 
-# vector
-
-# datetime
-
-http://www.tutorialspoint.com/cplusplus/cpp_date_time.htm
-
-# C++: String
-
-# String Basic[^1]
-
-```cpp
-#include <iostream>
-#include <string>
-using namespace std ;
-
-// assign a string
-string s1 = "www.java2s.com\n";
-cout << s1;
-
-// input a string
-string s2;
-cin >> s2;
-
-// concatenate two strings
-string s_c = s1 + s2;
-
-// compare strings
-s1 == s2;
-```
-
-[^1]: [Define a string variable, assign a value and display it : string « string « C++ Tutorial](http://www.java2s.com/Tutorial/Cpp/0300__string/Defineastringvariableassignavalueanddisplayit.htm)
-
-# C++: Pointer
-
-## Pointer [^1]
-
-A pointer is a variable whose value is the address of another variable. Like any variable or constant, you must declare a pointer before you can work with it.
-
-The general form of a pointer variable declaration is:
-
-```cpp
-type *variable_name;
-// example
-int    *ip;    // pointer to an integer
-double *dp;    // pointer to a double
-float  *fp;    // pointer to a float
-char   *ch;    // pointer to character
-```
-
-# Pointer Lab
-
-![](https://lh3.googleusercontent.com/MUzBdLRGuwilV16MBABqQtCHj71elA305jtDHBy8wSIMMYkIcqds=w213-h219-no)
-
-```cpp
-#include <iostream>
-using namespace std;
-
-/*
- * Look at these lines
- */
-int* a;
-a = new int[3];
-a[0] = 10;
-a[1] = 2;
-cout << "Address of pointer a: &a = " << &a << endl;
-cout << "Value   of pointer a:  a = " << a << endl << endl;
-cout << "Address of a[0]: &a[0] = " << &a[0] << endl;
-cout << "Value   of a[0]: a[0]  = " << a[0]  << endl;
-cout << "Value   of a[0]: *a    = " << *a    << endl << endl;
-cout << "Address of a[1]: &a[1] = " << &a[1] << endl;
-cout << "Value   of a[1]: a[1]  = " << a[1]  << endl;
-cout << "Value   of a[1]: *(a+1)= " << *(a+1)<< endl << endl;
-cout << "Address of a[2]: &a[2] = " << &a[2] << endl;
-cout << "Value   of a[2]: a[2]  = " << a[2]  << endl;
-cout << "Value   of a[2]: *(a+2)= " << *(a+2)<< endl << endl;
-```
-
-Result:
-
-[code lang="text"]
-Address of pointer a: &a = 008FF770
-Value   of pointer a:  a = 00C66ED0
-
-Address of a[0]: &a[0] = 00C66ED0
-Value   of a[0]: a[0]  = 10
-Value   of a[0]: *a    = 10
-
-Address of a[1]: &a[1] = 00C66ED4
-Value   of a[1]: a[1]  = 2
-Value   of a[1]: *(a+1)= 2
-
-Address of a[2]: &a[2] = 00C66ED8
-Value   of a[2]: a[2]  = -842150451
-Value   of a[2]: *(a+2)= -842150451
-```
-
-```cpp
-/*
- * ? How about this
- */
-a[3] = 8;
-// it will throw some think like this
-// Stack around the variable 'a' was corrupted.
-```
-
-[^1]: [C++ Pointers: tutorialspoint](http://www.tutorialspoint.com/cplusplus/cpp_pointers.htm)
-
-# C++: OOP
-
-![](http://wearelaunchbox.com/wp-content/uploads/2012/11/oop-basics.png)
-
-<h3>Classes and Objects</h3>
-
-<script src="http://ideone.com/e.js/l18265" type="text/javascript" ></script>
-
-# C++: Template
-
-### Function Template
-
-```cpp
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-template <typename T>
-
-T Max(T a, T b)
-{
-	return a < b ? b : a;
+     public static void main(String []args){
+         Set<Dog> dogs = new  HashSet<Dog>();
+         Dog dog1 = new Dog("a", 1);
+         Dog dog2 = new Dog("a", 2);
+         Dog dog3 = new Dog("a", 1);
+         Dog dog4 = new Dog("b", 1);
+         dogs.add( dog1);
+         dogs.add( dog2);
+         dogs.add( dog3);
+         dogs.add( dog4);
+        System.out.println(dogs.size());
+     }
 }
 
-int main()
-{
+// 3
+```
 
-	int i = 39;
-	int j = 20;
-	cout << Max(i, j) << endl;
+```java
+public class Dog {
+    public String name;
+    public int age;
+    public int value;
+    public Dog(String name, int age){
+        this.name = name;
+        this.age = age;
+        value = (this.name + String.valueOf(this.age)).hashCode();
+    }
 
-	double f1 = 13.5;
-	double f2 = 20.7;
-	cout << Max(f1, f2) << endl;
+    @Override
+    public int hashCode() {
+        return value;
+    }
 
-	string s1 = "Hello";
-	string s2 = "World";
-	cout << Max(s1, s2) << endl;
-
-	double n1 = 20.3;
-	float n2 = 20.4;
-	// it will show an error
-	// Error: no instance of function template "Max" matches the argument list
-	//        arguments types are: (double, float)
-	cout << Max(n1, n2) << endl;
-	return 0;
+    @Override
+    public boolean equals(Object obj) {
+        return (obj instanceof Dog && ((Dog) obj).value == this.value);
+    }
 }
 ```
 
-# C++: Test
-
-# 1. Create Unit Test in Visual Studio 2013
-
-### Step 1. Create `TDDLab` Solution
-
-**1.1** Open Visual Studio 2013
-
-**1.2** `File` ->  `New Project...` ->
-
-* Click `Visual C++` -> `Win32`
-
-* Choose `Win32 Console Application`
-
-* Fill to `Name` input text: **TDDLab**
-
-* Click `OK` -> `Next`
-
-**1.3** In project settings, remove options:
-
-* `Precompiled Header`
-* `Securirty Develoment Lifecyde(SQL) check`
-
-**1.4** Click `Finish`
-
-### Step 2. Create `Counter` Class
-
-**2.1** Right-click `TDDLab` -> `Add` -> `Class...`
-
-**2.2** Choose `Visual C++` -> `C++ Class` -> `Add`
-
-**2.3** Fill in `Class name` box **Counter** -> `Finish`
-
-**2.4** In `Counter.h` file, add this below function
-
-```cpp
-int add(int a, int b);
-```
-
-**2.5** In `Counter.cpp`, add this below function
-
-```cpp
-int Counter::add(int a, int b) {
-  return a+b;
-}
-```
-
-Your `Counter` class should look like this
-
-![](https://lh3.googleusercontent.com/MeGn9mLmTTdYtcc-F1HeS7cm5v5QhmmLpPKa35QUeIqDOaKWHhqHlYZilL-sDIFH4993R0dgck4ZfQ=w745-h434-no)
-
-### Step 3. Create `TDDLabTest` Project
-
-**3.1** Right-click `Solution 'TDDLab'` -> `Add` -> `New Project...`
-
-**3.2** Choose `Visual C++` -> `Test`
-
-**3.3** Choose `Native Unit Test Project`
-
-**3.4** Fill to `Name` input text: **TDDLabTest**
-
-### Step 4. Write unit test
-
-**4.1**  In `unittest1.cpp`, add header of `Counter` class
-
-```cpp
-#include "../TDDLab/Counter.h"
-```
-
-**4.2** In `TEST_METHOD` function
-
-```cpp
-{
-  Counter counter;
-  Assert::AreEqual(2, counter.add(1, 1));
-}
-```
-
-**4.3** Click `TEST` in menu bar -> `Run` -> `All Test (Ctrl + R, A)
-
-### Step 5. Fix error `LNK 2019: unresolved external symbol`
-
-**5.1** Change `Configuration Type` of `TDDLab` project
-
-* Right click  `TDDLab` project -> `Properties`
-* `General` -> `Configuration Type` -> `Static library (.lib)` -> `OK`
-
-**5.2** Add Reference to `TDDLabTest` project
-
-* Right click `TDDLabTest` solution -> `Properties` -> `Common Properties` -> `Add New Reference `
-* Choose `TDDLab` -> `OK` -> `OK`
-
-### Step 6. Run Tests
-
-Click `TEST` in menu bar -> `Run` -> `All Test (Ctrl + R, A)
-
-Test should be passed.
-
-![](https://lh3.googleusercontent.com/OePw8s2rRtk1ygSbCyOOGx7TQAL1tiJoE4cBM1_YTtauTP4Gcb0KhsR9PWInbAxaGLJDg8W7HsDumQ=w747-h434-no)
-
-# 2. Assertion Frameworks
-
-* [Microsoft.VisualStudio.TestTools.CppUnitTestFramework](https://msdn.microsoft.com/en-us/library/hh694604.aspx)
-* [evolutional/Chamois](https://github.com/evolutional/Chamois)
-
-# 3. Test Frameworks
-
-* [googletest](https://github.com/google/googletest)
-
-# C++: IDE
-
-![](http://i0.wp.com/venturebeat.com/wp-content/uploads/2014/11/visual_studio_2010_logo.png?fit=930%2C9999)
-
-## Visual Studio
-
-### Content
+## List [^1]
 
 ```
-├── 1. Create new project
+List<String> places = Arrays.asList("Buenos Aires", "Córdoba", "La Plata");
+```
+
+[^1]: [Initialization of an ArrayList in one line](http://stackoverflow.com/questions/1005073/initialization-of-an-arraylist-in-one-line)
+
+# Java: Parallel
+
+Thread
+
+### [Timer](https://docs.oracle.com/javase/7/docs/api/java/util/Timer.html)
+
+# Java: Configuration
+
+-VM options : VM options are loaded from the IDE_HOME\bin\<product>[bits][.exe].vmoptions file.<a href="https://intellij-support.jetbrains.com/hc/en-us/articles/206827537-Configuring-JVM-options-and-platform-properties">[1]</a>
+-ea : enable assertions
+```
+-ea -D[FILE_NAME]="$PATH_DATA"
+```
+
+# Java: Web with Spring
+
+![](http://www.javatpoint.com/images/spimages/spring1.png)
+
+<blockquote>
+  <p>Spring helps development teams everywhere build simple, portable, fast and flexible JVM-based systems and applications.</p>
+</blockquote>
+
+<h3>Components</h3>
+
+<p><strong>Spring Boot</strong>: Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run". We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need very little Spring configuration.</p>
+
+# Spring: Database
+
+### Database Migration
+
+[Flyway](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html)
+
+# Java: IDE
+
+# IntellIJ
+
+```
+├── 1. Project Manager
 ├── 2. Search & Replace
 ├── 3. Navigation
 ├── 4. Formatting
@@ -456,158 +236,165 @@ Test should be passed.
 └── 7. Git Integration
 ```
 
-## 4. Formatting
+### 1. Project Manager
+
+1.1 Create New Project
+
+1.2 Import Maven Project
+
+https://www.jetbrains.com/help/idea/2016.1/importing-project-from-maven-model.html
+
+### 2. Search & Replace
+
+<table>
+<tr>
+<td>Global Search</td>
+<td><code>Shift Shift</code></td>
+</tr>
+</table>
+
+### 3. Navigation
+
+<table>
+<tr>
+<td>Next/Previous Error</td>
+<td><code>F2</code> / <code>Shift + F2</code></td>
+</tr>
+</table>
+
+### 4. Formatting
+
+<table>
+<tr>
+<td>Auto Format</td>
+<td><code>Ctrl + Alt + L</code></td>
+</tr>
+</table>
+
+# Java: Package Manager
+
+# Gradle
+
+![](http://www.agilearts.nl/wp-content/uploads/2013/03/gradle.png)
+
+### Plugins
+
+#### [Application plugin](https://docs.gradle.org/current/userguide/application_plugin.html)
+
+**Usages**
+
+**1.** Using the application plugin
+
+Add this line in `build.gradle`
 
 ```
-Ctrl + K / Ctrl + F
-Ctrl + F / Ctrl + D
+apply plugin: 'application'
 ```
 
-## 6. Git in Visual Studio
+**2.**  Configure the application main class
 
-[https://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Visual-Studio](https://git-scm.com/book/en/v2/Git-in-Other-Environments-Git-in-Visual-Studio)
+```
+mainClassName = "org.gradle.sample.Main"
+```
 
-# Online IDE
+# Java: Build Tool
 
-* [codechef ide](https://www.codechef.com/ide)
+# Apache Ant
 
-# C++: Database
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Apache-Ant-logo.svg/554px-Apache-Ant-logo.svg.png)
 
-### Sqlite with Visual Studio 2013
+Apache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other. The main known usage of Ant is the build of Java applications. Ant supplies a number of built-in tasks allowing to compile, assemble, test and run Java applications. Ant can also be used effectively to build non Java applications, for instance C or C++ applications. More generally, Ant can be used to pilot any type of process which can be described in terms of targets and tasks. [^1]
 
-**Step 1**: Create new project
-1.1 Create a new C++ Win32 Console application.
+### Install Ant
 
-**Step 2:** Download Sqlite DLL
+Download and extract Apache Ant 1.9.6
 
-2.1. Download the native SQLite DLL from: http://sqlite.org/sqlite-dll-win32-x86-3070400.zip
-2.2. Unzip the DLL and DEF files and place the contents in your project’s source folder (an easy way to find this is to right click on the tab and click the “Open Containing Folder” menu item.
+```
+wget http://mirrors.viethosting.vn/apache//ant/binaries/apache-ant-1.9.6-bin.tar.gz
+tar -xzf apache-ant-1.9.6-bin.tar.gz
+```
 
-**Step 3:** Build LIB file
+Set path to ant folder
 
-3.1. Open a “Developer Command Prompt” and navigate to your source folder. (If you can't find this tool, follow this post in stackoverflow [Where is Developer Command Prompt for VS2013?](http://stackoverflow.com/questions/21476588/where-is-developer-command-prompt-for-vs2013) to create it)
-3.2. Create an import library using the following command line: LIB /DEF:sqlite3.def
+<h3>Build Ant through proxy</h3>
 
-**Step 4:** Add Dependencies
+<strong>Requirement: 1.9.5+</strong>
 
-4.1. Add the library (i.e. sqlite3.lib) to your Project Properties -> Configuration Properties -> Linker -> Input -> Additional Dependencies.
-4.2. Download http://sqlite.org/sqlite-amalgamation-3070400.zip
-4.3. Unzip the sqlite3.h header file and place into your source directory.
-4.4. Include the the sqlite3.h header file in your source code.
-4.5. You will need to include the sqlite3.dll in the same directory as your program (or in a System Folder).
+Add the following lines into <code>build.xml</code>
 
-**Step 5:** Run test code
+```
+<target name="ivy-init" depends="ivy-proxy, ivy-probe-antlib, ivy-init-antlib" description="--> initialise Ivy settings">
+  <ivy:settings file="${ivy.dir}/ivysettings.xml" />
+  </target>
+ <target name="ivy-proxy" description="-->Proxy Ivy settings">
+  <property name="proxy.host" value="proxy.com" />
+  <property name="proxy.port" value="8080" />
+  <property name="proxy.user" value="user" />
+  <property name="proxy.password" value="password" />
+  <setproxy
+    proxyhost="${proxy.host}"
+    proxyport="${proxy.port}"
+    proxyuser="${proxy.user}"
+    proxypassword="${proxy.password}" />
+ </target>
+```
 
-```cpp
-#include "stdafx.h"
-#include <ios>
-#include <iostream>
-#include "sqlite3.h"
+[^1]: [Apache Ant™](http://ant.apache.org/)
 
-using namespace std;
+# Java: Errors
 
-int _tmain(int argc, _TCHAR* argv[])
-{
-   int rc;
-   char *error;
+# Two Many Open Files [^1] [^2]
 
-   // Open Database
-   cout << "Opening MyDb.db ..." << endl;
-   sqlite3 *db;
-   rc = sqlite3_open("MyDb.db", &db);
-   if (rc)
-   {
-      cerr << "Error opening SQLite3 database: " << sqlite3_errmsg(db) << endl << endl;
-      sqlite3_close(db);
-      return 1;
-   }
-   else
-   {
-      cout << "Opened MyDb.db." << endl << endl;
-   }
+Edit  `/etc/sysctl.conf`
 
-   // Execute SQL
-   cout << "Creating MyTable ..." << endl;
-   const char *sqlCreateTable = "CREATE TABLE MyTable (id INTEGER PRIMARY KEY, value STRING);";
-   rc = sqlite3_exec(db, sqlCreateTable, NULL, NULL, &error);
-   if (rc)
-   {
-      cerr << "Error executing SQLite3 statement: " << sqlite3_errmsg(db) << endl << endl;
-      sqlite3_free(error);
-   }
-   else
-   {
-      cout << "Created MyTable." << endl << endl;
-   }
+```
+fs.file-max = 100000
+```
 
-   // Execute SQL
-   cout << "Inserting a value into MyTable ..." << endl;
-   const char *sqlInsert = "INSERT INTO MyTable VALUES(NULL, 'A Value');";
-   rc = sqlite3_exec(db, sqlInsert, NULL, NULL, &error);
-   if (rc)
-   {
-      cerr << "Error executing SQLite3 statement: " << sqlite3_errmsg(db) << endl << endl;
-      sqlite3_free(error);
-   }
-   else
-   {
-      cout << "Inserted a value into MyTable." << endl << endl;
-   }
+Spring, http://www.tomcatexpert.com/blog/2010/04/01/configuring-jdbc-pool-high-concurrency
 
-   // Display MyTable
-   cout << "Retrieving values in MyTable ..." << endl;
-   const char *sqlSelect = "SELECT * FROM MyTable;";
-   char **results = NULL;
-   int rows, columns;
-   sqlite3_get_table(db, sqlSelect, &results, &rows, &columns, &error);
-   if (rc)
-   {
-      cerr << "Error executing SQLite3 query: " << sqlite3_errmsg(db) << endl << endl;
-      sqlite3_free(error);
-   }
-   else
-   {
-      // Display Table
-      for (int rowCtr = 0; rowCtr <= rows; ++rowCtr)
-      {
-         for (int colCtr = 0; colCtr < columns; ++colCtr)
-         {
-            // Determine Cell Position
-            int cellPosition = (rowCtr * columns) + colCtr;
 
-            // Display Cell Value
-            cout.width(12);
-            cout.setf(ios::left);
-            cout << results[cellPosition] << " ";
-         }
+[^1]: [Linux Increase The Maximum Number Of Open Files / File Descriptors (FD)](http://www.cyberciti.biz/faq/linux-increase-the-maximum-number-of-open-files/)
+[^2]: [java 1="Too" 2="many" 3="open" 4="files" 5="Spring" 6="Hibernate" 7="Tomcat" language=".net.SocketException:"][/java](http://stackoverflow.com/questions/23252974/java-net-socketexception-too-many-open-files-spring-hibernate-tomcat)
 
-         // End Line
-         cout << endl;
+# Java: Production (Docker)
 
-         // Display Separator For Header
-         if (0 == rowCtr)
-         {
-            for (int colCtr = 0; colCtr < columns; ++colCtr)
-            {
-               cout.width(12);
-               cout.setf(ios::left);
-               cout << "~~~~~~~~~~~~ ";
-            }
-            cout << endl;
-         }
-      }
-   }
-   sqlite3_free_table(results);
+Production with `java`
 
-   // Close Database
-   cout << "Closing MyDb.db ..." << endl;
-   sqlite3_close(db);
-   cout << "Closed MyDb.db" << endl << endl;
+Base Image: [java][/java](https://hub.docker.com/_/java/)
 
-   // Wait For User To Close Program
-   cout << "Please press any key to exit the program ..." << endl;
-   cin.get();
+Docker Folder
 
-   return 0;
-}
+```
+your-app/
+├── app
+│   ├── bin
+│   ├───── your_app.sh
+│   └── lib
+├── Dockerfile
+└── run.sh
+```
+
+`Dockerfile`
+
+```
+FROM java:7
+
+COPY run.sh run.sh
+```
+
+`run.sh`
+
+```
+cd /app/bin
+chmod u+x your_app.sh
+./your_app.sh
+```
+
+Compose
+
+```
+ service:
+  build: ./your_app
+  command: 'bash run.sh'
 ```
