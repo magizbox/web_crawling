@@ -1,5 +1,34 @@
 site_name: JavaTutorial
+site_author: "Vu Anh"
+google_analytics: ["UA-68978617-1", "magizbox.com"]
+
 pages:
 - "Home": 'index.md'
+- "Installation": 'installation.md'
+- "Docs":
+  - "Introduction": "introduction.md"
+  - "Data Structure": "data_structure.md"
+  - "IDE": "ide.md"
+  - "Package Manager": "package_manager.md"
+  - "Build Tool": "build_tool.md"
+  - "Production": "production.md"
+
 markdown_extensions:
     - footnotes
+
+extra_css:
+  - components/magiz-c-book/src/book.css
+  - components/magiz-c-course/src/course.css
+  - components/magiz-c-video/src/video.css
+  - components/magiz-c-benchmark/src/benchmark.css
+  - components/magiz-c-paper/src/paper.css
+
+extra_javascript:
+  - components/underscore/underscore.js
+  - components/magiz-c-book/src/gspreadsheet.js
+  - components/magiz-c-paper/src/paper.js
+  - components/magiz-c-course/src/course.js
+  - components/magiz-c-benchmark/src/benchmark.js
+  - components/magiz-c-benchmark/src/bootstrap-popup.js
+  - components/magiz-c-book/src/book.js
+  - components/magiz-c-video/src/video.js

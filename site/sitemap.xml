@@ -4,9 +4,57 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-07-05</lastmod>
+     <lastmod>2016-11-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+    <url>
+     <loc>None/installation/</loc>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/introduction/</loc>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/data_structure/</loc>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/ide/</loc>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/package_manager/</loc>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/build_tool/</loc>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/production/</loc>
+     <lastmod>2016-11-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>

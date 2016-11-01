@@ -7,19 +7,19 @@
         
         <meta name="author" content="Vu Anh">
         
-        <link rel="shortcut icon" href="./img/favicon.ico">
+        <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>JavaTutorial</title>
+	<title>Production - JavaTutorial</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="./css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
-        <link href="./components/magiz-c-book/src/book.css" rel="stylesheet">
-        <link href="./components/magiz-c-course/src/course.css" rel="stylesheet">
-        <link href="./components/magiz-c-video/src/video.css" rel="stylesheet">
-        <link href="./components/magiz-c-benchmark/src/benchmark.css" rel="stylesheet">
-        <link href="./components/magiz-c-paper/src/paper.css" rel="stylesheet">
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../components/magiz-c-book/src/book.css" rel="stylesheet">
+        <link href="../components/magiz-c-course/src/course.css" rel="stylesheet">
+        <link href="../components/magiz-c-video/src/video.css" rel="stylesheet">
+        <link href="../components/magiz-c-benchmark/src/benchmark.css" rel="stylesheet">
+        <link href="../components/magiz-c-paper/src/paper.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -58,7 +58,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">JavaTutorial</a>
+            <a class="navbar-brand" href="..">JavaTutorial</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -69,54 +69,54 @@
                 
                 
                     <li >
-                        <a href=".">Home</a>
+                        <a href="..">Home</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="installation/">Installation</a>
+                        <a href="../installation/">Installation</a>
                     </li>
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="introduction/">Introduction</a>
+    <a href="../introduction/">Introduction</a>
 </li>
 
                         
                             
 <li >
-    <a href="data_structure/">Data Structure</a>
+    <a href="../data_structure/">Data Structure</a>
 </li>
 
                         
                             
 <li >
-    <a href="ide/">IDE</a>
+    <a href="../ide/">IDE</a>
 </li>
 
                         
                             
 <li >
-    <a href="package_manager/">Package Manager</a>
+    <a href="../package_manager/">Package Manager</a>
 </li>
 
                         
                             
 <li >
-    <a href="build_tool/">Build Tool</a>
+    <a href="../build_tool/">Build Tool</a>
 </li>
 
                         
                             
-<li >
-    <a href="production/">Production</a>
+<li class="active">
+    <a href="./">Production</a>
 </li>
 
                         
@@ -134,8 +134,8 @@
                     </a>
                 </li>
                 
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../build_tool/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
@@ -153,15 +153,47 @@
 
         <div class="container">
             
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#java-production-docker">Java: Production (Docker)</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
 
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
-    </div>
+<h1 id="java-production-docker">Java: Production (Docker)</h1>
+<p>Production with <code>java</code></p>
+<p>Base Image: [java]<a href="https://hub.docker.com/_/java/">/java</a></p>
+<p>Docker Folder</p>
+<pre><code>your-app/
+├── app
+│   ├── bin
+│   ├───── your_app.sh
+│   └── lib
+├── Dockerfile
+└── run.sh
+</code></pre>
 
+<p><code>Dockerfile</code></p>
+<pre><code>FROM java:7
 
+COPY run.sh run.sh
+</code></pre>
+
+<p><code>run.sh</code></p>
+<pre><code>cd /app/bin
+chmod u+x your_app.sh
+./your_app.sh
+</code></pre>
+
+<p>Compose</p>
+<pre><code> service:
+  build: ./your_app
+  command: 'bash run.sh'
+</code></pre></div>
+            
         </div>
 
         <footer class="col-md-12">
@@ -170,20 +202,20 @@
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script>var base_url = '.';</script>
-        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-        <script src="./js/base.js"></script>
-        <script src="./components/underscore/underscore.js"></script>
-        <script src="./components/magiz-c-book/src/gspreadsheet.js"></script>
-        <script src="./components/magiz-c-paper/src/paper.js"></script>
-        <script src="./components/magiz-c-course/src/course.js"></script>
-        <script src="./components/magiz-c-benchmark/src/benchmark.js"></script>
-        <script src="./components/magiz-c-benchmark/src/bootstrap-popup.js"></script>
-        <script src="./components/magiz-c-book/src/book.js"></script>
-        <script src="./components/magiz-c-video/src/video.js"></script>
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../components/underscore/underscore.js"></script>
+        <script src="../components/magiz-c-book/src/gspreadsheet.js"></script>
+        <script src="../components/magiz-c-paper/src/paper.js"></script>
+        <script src="../components/magiz-c-course/src/course.js"></script>
+        <script src="../components/magiz-c-benchmark/src/benchmark.js"></script>
+        <script src="../components/magiz-c-benchmark/src/bootstrap-popup.js"></script>
+        <script src="../components/magiz-c-book/src/book.js"></script>
+        <script src="../components/magiz-c-video/src/video.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">

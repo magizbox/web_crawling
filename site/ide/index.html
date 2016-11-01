@@ -7,19 +7,19 @@
         
         <meta name="author" content="Vu Anh">
         
-        <link rel="shortcut icon" href="./img/favicon.ico">
+        <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>JavaTutorial</title>
+	<title>IDE - JavaTutorial</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="./css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
-        <link href="./components/magiz-c-book/src/book.css" rel="stylesheet">
-        <link href="./components/magiz-c-course/src/course.css" rel="stylesheet">
-        <link href="./components/magiz-c-video/src/video.css" rel="stylesheet">
-        <link href="./components/magiz-c-benchmark/src/benchmark.css" rel="stylesheet">
-        <link href="./components/magiz-c-paper/src/paper.css" rel="stylesheet">
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../components/magiz-c-book/src/book.css" rel="stylesheet">
+        <link href="../components/magiz-c-course/src/course.css" rel="stylesheet">
+        <link href="../components/magiz-c-video/src/video.css" rel="stylesheet">
+        <link href="../components/magiz-c-benchmark/src/benchmark.css" rel="stylesheet">
+        <link href="../components/magiz-c-paper/src/paper.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -58,7 +58,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">JavaTutorial</a>
+            <a class="navbar-brand" href="..">JavaTutorial</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -69,54 +69,54 @@
                 
                 
                     <li >
-                        <a href=".">Home</a>
+                        <a href="..">Home</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="installation/">Installation</a>
+                        <a href="../installation/">Installation</a>
                     </li>
                 
                 
                 
-                    <li class="dropdown">
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="introduction/">Introduction</a>
+    <a href="../introduction/">Introduction</a>
 </li>
 
                         
                             
 <li >
-    <a href="data_structure/">Data Structure</a>
+    <a href="../data_structure/">Data Structure</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">IDE</a>
 </li>
 
                         
                             
 <li >
-    <a href="ide/">IDE</a>
+    <a href="../package_manager/">Package Manager</a>
 </li>
 
                         
                             
 <li >
-    <a href="package_manager/">Package Manager</a>
+    <a href="../build_tool/">Build Tool</a>
 </li>
 
                         
                             
 <li >
-    <a href="build_tool/">Build Tool</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="production/">Production</a>
+    <a href="../production/">Production</a>
 </li>
 
                         
@@ -134,13 +134,13 @@
                     </a>
                 </li>
                 
-                    <li class="disabled">
-                        <a rel="next" >
+                    <li >
+                        <a rel="next" href="../data_structure/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="prev" >
+                    <li >
+                        <a rel="prev" href="../package_manager/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -153,15 +153,66 @@
 
         <div class="container">
             
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#java-ide">Java: IDE</a></li>
+        
+    
+        <li class="main "><a href="#intellij">IntellIJ</a></li>
+        
+            <li><a href="#1-project-manager">1. Project Manager</a></li>
+        
+            <li><a href="#2-search-replace">2. Search &amp; Replace</a></li>
+        
+            <li><a href="#3-navigation">3. Navigation</a></li>
+        
+            <li><a href="#4-formatting">4. Formatting</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
 
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
-    </div>
+<h1 id="java-ide">Java: IDE</h1>
+<h1 id="intellij">IntellIJ</h1>
+<pre><code>├── 1. Project Manager
+├── 2. Search &amp; Replace
+├── 3. Navigation
+├── 4. Formatting
+├── 5. Debugging
+├── 6. Build &amp; Release
+└── 7. Git Integration
+</code></pre>
 
+<h3 id="1-project-manager">1. Project Manager</h3>
+<p>1.1 Create New Project</p>
+<p>1.2 Import Maven Project</p>
+<p>https://www.jetbrains.com/help/idea/2016.1/importing-project-from-maven-model.html</p>
+<h3 id="2-search-replace">2. Search &amp; Replace</h3>
+<table>
+<tr>
+<td>Global Search</td>
+<td><code>Shift Shift</code></td>
+</tr>
+</table>
 
+<h3 id="3-navigation">3. Navigation</h3>
+<table>
+<tr>
+<td>Next/Previous Error</td>
+<td><code>F2</code> / <code>Shift + F2</code></td>
+</tr>
+</table>
+
+<h3 id="4-formatting">4. Formatting</h3>
+<table>
+<tr>
+<td>Auto Format</td>
+<td><code>Ctrl + Alt + L</code></td>
+</tr>
+</table></div>
+            
         </div>
 
         <footer class="col-md-12">
@@ -170,20 +221,20 @@
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script>var base_url = '.';</script>
-        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-        <script src="./js/base.js"></script>
-        <script src="./components/underscore/underscore.js"></script>
-        <script src="./components/magiz-c-book/src/gspreadsheet.js"></script>
-        <script src="./components/magiz-c-paper/src/paper.js"></script>
-        <script src="./components/magiz-c-course/src/course.js"></script>
-        <script src="./components/magiz-c-benchmark/src/benchmark.js"></script>
-        <script src="./components/magiz-c-benchmark/src/bootstrap-popup.js"></script>
-        <script src="./components/magiz-c-book/src/book.js"></script>
-        <script src="./components/magiz-c-video/src/video.js"></script>
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../components/underscore/underscore.js"></script>
+        <script src="../components/magiz-c-book/src/gspreadsheet.js"></script>
+        <script src="../components/magiz-c-paper/src/paper.js"></script>
+        <script src="../components/magiz-c-course/src/course.js"></script>
+        <script src="../components/magiz-c-benchmark/src/benchmark.js"></script>
+        <script src="../components/magiz-c-benchmark/src/bootstrap-popup.js"></script>
+        <script src="../components/magiz-c-book/src/book.js"></script>
+        <script src="../components/magiz-c-video/src/video.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">

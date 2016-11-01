@@ -2,177 +2,222 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Java\n\n\nI can code Java, but... \n1\n\n\n\n\nBest Programming languages \n2\n\n\n\n\nInstallation \n3\n\n\n\n# cent os 6.5\nyum install java-1.7.0-openjdk-devel\n\n\n\n\nConcepts\n\n\n\nAnnotations\n\n\nTools\n\n\n\n\n\n\n\n\n\n\nBuild Tool\n\n\n\nTest\n\n\n\n\n\n\nGradle\n\n\nJUnit\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPatterns in Real Life\n\n\n\n\n\n\n\nFunny Story | Best Programming languages\n\n\n\n\n\n\n\nHow To Install Java on CentOS and Fedora\n\n\n\n\n\n\n\n\n\n\nJava: 101\n\n\n1. Install\n\n\nUbuntu\n\n\nStep 1. Download sdk\n\n\nhttp://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html\n\n\n\n\nStep 2. Create folder jvm\n\n\nsudo mkdir /usr/lib/jvm/\n\n\n\n\nStep 3. cd to folder downloads jdk and run command\n\n\nsudo mv jdk1.7.0_x/ /usr/lib/jvm/jdk1.7.0_x\n\n\n\n\nRun install java\n\n\nsudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.7.0_x/jre/bin/java 0\n\n\n\n\nAdd path jdk : /usr/lib/jvm/jdk1.7.0_x\n\n\nsu -\nnano /etc/environment\n\n\n\n\n2. Hello World \n1\n\n\npublic class HelloWorld {\n\n    public static void main(String[] args) {\n        // Prints \nHello, World\n to the terminal window.\n        System.out.println(\nHello, World\n);\n    }\n\n}\n\n\n\n\nJava: Data Structure\n\n\nJava: datetime\n\n\nCalendar c = Calendar.getInstance();\n\n\n\n\nJava: string, number\n\n\nConvert \n1\n\n\nString.valueOf(1000)\n\n\n\n\nMake a random\n\n\n// create a random number from 0 to 99\n(new Random()).nextInt(100)\n\n\n\n\nJava: collection\n\n\nSet\n\n\n\nimport java.util.HashSet;\nimport java.util.Set;\n\npublic class HelloWorld{\n\n     public static void main(String []args){\n         Set\nDog\n dogs = new  HashSet\nDog\n();\n         Dog dog1 = new Dog(\na\n, 1);\n         Dog dog2 = new Dog(\na\n, 2);\n         Dog dog3 = new Dog(\na\n, 1);\n         Dog dog4 = new Dog(\nb\n, 1);\n         dogs.add( dog1);\n         dogs.add( dog2);\n         dogs.add( dog3);\n         dogs.add( dog4);\n        System.out.println(dogs.size());\n     }\n}\n\n// 3\n\n\n\n\npublic class Dog {\n    public String name;\n    public int age;\n    public int value;\n    public Dog(String name, int age){\n        this.name = name;\n        this.age = age;\n        value = (this.name + String.valueOf(this.age)).hashCode();\n    }\n\n    @Override\n    public int hashCode() {\n        return value;\n    }\n\n    @Override\n    public boolean equals(Object obj) {\n        return (obj instanceof Dog \n ((Dog) obj).value == this.value);\n    }\n}\n\n\n\n\nList \n1\n\n\nList\nString\n places = Arrays.asList(\nBuenos Aires\n, \nC\u00f3rdoba\n, \nLa Plata\n);\n\n\n\n\nJava: Parallel\n\n\nThread\n\n\nTimer\n\n\nJava: Configuration\n\n\n-VM options : VM options are loaded from the IDE_HOME\\bin\\\n[bits][.exe].vmoptions file.\n[1]\n\n-ea : enable assertions\n\n\n-ea -D[FILE_NAME]=\n$PATH_DATA\n\n\n\n\n\nJava: Web with Spring\n\n\n\n\n\n  \nSpring helps development teams everywhere build simple, portable, fast and flexible JVM-based systems and applications.\n\n\n\n\n\nComponents\n\n\n\nSpring Boot\n: Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can \"just run\". We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need very little Spring configuration.\n\n\n\nSpring: Database\n\n\nDatabase Migration\n\n\nFlyway\n\n\nJava: IDE\n\n\nIntellIJ\n\n\n\u251c\u2500\u2500 1. Project Manager\n\u251c\u2500\u2500 2. Search \n Replace\n\u251c\u2500\u2500 3. Navigation\n\u251c\u2500\u2500 4. Formatting\n\u251c\u2500\u2500 5. Debugging\n\u251c\u2500\u2500 6. Build \n Release\n\u2514\u2500\u2500 7. Git Integration\n\n\n\n\n1. Project Manager\n\n\n1.1 Create New Project\n\n\n1.2 Import Maven Project\n\n\nhttps://www.jetbrains.com/help/idea/2016.1/importing-project-from-maven-model.html\n\n\n2. Search \n Replace\n\n\n\n\n\n\nGlobal Search\n\n\nShift Shift\n\n\n\n\n\n\n\n3. Navigation\n\n\n\n\n\n\nNext/Previous Error\n\n\nF2\n / \nShift + F2\n\n\n\n\n\n\n\n4. Formatting\n\n\n\n\n\n\nAuto Format\n\n\nCtrl + Alt + L\n\n\n\n\n\n\n\nJava: Package Manager\n\n\nGradle\n\n\n\n\nPlugins\n\n\nApplication plugin\n\n\nUsages\n\n\n1.\n Using the application plugin\n\n\nAdd this line in \nbuild.gradle\n\n\napply plugin: 'application'\n\n\n\n\n2.\n  Configure the application main class\n\n\nmainClassName = \norg.gradle.sample.Main\n\n\n\n\n\nJava: Build Tool\n\n\nApache Ant\n\n\n\n\nApache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other. The main known usage of Ant is the build of Java applications. Ant supplies a number of built-in tasks allowing to compile, assemble, test and run Java applications. Ant can also be used effectively to build non Java applications, for instance C or C++ applications. More generally, Ant can be used to pilot any type of process which can be described in terms of targets and tasks. \n1\n\n\nInstall Ant\n\n\nDownload and extract Apache Ant 1.9.6\n\n\nwget http://mirrors.viethosting.vn/apache//ant/binaries/apache-ant-1.9.6-bin.tar.gz\ntar -xzf apache-ant-1.9.6-bin.tar.gz\n\n\n\n\nSet path to ant folder\n\n\nBuild Ant through proxy\n\n\n\nRequirement: 1.9.5+\n\n\nAdd the following lines into \nbuild.xml\n\n\ntarget name=\nivy-init\n depends=\nivy-proxy, ivy-probe-antlib, ivy-init-antlib\n description=\n--\n initialise Ivy settings\n\n  \nivy:settings file=\n${ivy.dir}/ivysettings.xml\n /\n\n  \n/target\n\n \ntarget name=\nivy-proxy\n description=\n--\nProxy Ivy settings\n\n  \nproperty name=\nproxy.host\n value=\nproxy.com\n /\n\n  \nproperty name=\nproxy.port\n value=\n8080\n /\n\n  \nproperty name=\nproxy.user\n value=\nuser\n /\n\n  \nproperty name=\nproxy.password\n value=\npassword\n /\n\n  \nsetproxy\n    proxyhost=\n${proxy.host}\n\n    proxyport=\n${proxy.port}\n\n    proxyuser=\n${proxy.user}\n\n    proxypassword=\n${proxy.password}\n /\n\n \n/target\n\n\n\n\n\nJava: Errors\n\n\nTwo Many Open Files \n1\n \n2\n\n\nEdit  \n/etc/sysctl.conf\n\n\nfs.file-max = 100000\n\n\n\n\nSpring, http://www.tomcatexpert.com/blog/2010/04/01/configuring-jdbc-pool-high-concurrency\n\n\nJava: Production (Docker)\n\n\nProduction with \njava\n\n\nBase Image: [java]\n/java\n\n\nDocker Folder\n\n\nyour-app/\n\u251c\u2500\u2500 app\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 bin\n\u2502   \u251c\u2500\u2500\u2500\u2500\u2500 your_app.sh\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 lib\n\u251c\u2500\u2500 Dockerfile\n\u2514\u2500\u2500 run.sh\n\n\n\n\nDockerfile\n\n\nFROM java:7\n\nCOPY run.sh run.sh\n\n\n\n\nrun.sh\n\n\ncd /app/bin\nchmod u+x your_app.sh\n./your_app.sh\n\n\n\n\nCompose\n\n\n service:\n  build: ./your_app\n  command: 'bash run.sh'\n\n\n\n\n\n\n\n\n\n\n\n\nLinux Increase The Maximum Number Of Open Files / File Descriptors (FD)\n\n\n\n\n\n\n[java 1=\"Too\" 2=\"many\" 3=\"open\" 4=\"files\" 5=\"Spring\" 6=\"Hibernate\" 7=\"Tomcat\" language=\".net.SocketException:\"]\n/java", 
+            "text": "Java\n\n\nJava is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers \"write once, run anywhere\" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2016, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by \nJames Gosling\n at Sun Microsystems (which has since been acquired by Oracle Corporation) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.\n\n\nThe original and reference implementation Java compilers, virtual machines, and class libraries were originally released by Sun under proprietary licences. As of May 2007, in compliance with the specifications of the Java Community Process, Sun relicensed most of its Java technologies under the GNU General Public License. Others have also developed alternative implementations of these Sun technologies, such as the GNU Compiler for Java (bytecode compiler), GNU Classpath (standard libraries), and IcedTea-Web (browser plugin for applets).\n\n\nBooks\n\n\n\n\n\n\n\n\nCourses", 
             "title": "Home"
         }, 
         {
             "location": "/#java", 
-            "text": "I can code Java, but...  1   Best Programming languages  2", 
+            "text": "Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers \"write once, run anywhere\" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2016, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by  James Gosling  at Sun Microsystems (which has since been acquired by Oracle Corporation) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.  The original and reference implementation Java compilers, virtual machines, and class libraries were originally released by Sun under proprietary licences. As of May 2007, in compliance with the specifications of the Java Community Process, Sun relicensed most of its Java technologies under the GNU General Public License. Others have also developed alternative implementations of these Sun technologies, such as the GNU Compiler for Java (bytecode compiler), GNU Classpath (standard libraries), and IcedTea-Web (browser plugin for applets).", 
             "title": "Java"
         }, 
         {
-            "location": "/#java-101", 
+            "location": "/#books", 
             "text": "", 
-            "title": "Java: 101"
+            "title": "Books"
         }, 
         {
-            "location": "/#1-install", 
+            "location": "/#courses", 
             "text": "", 
-            "title": "1. Install"
+            "title": "Courses"
         }, 
         {
-            "location": "/#ubuntu", 
+            "location": "/installation/", 
+            "text": "Installation\n\n\nUbuntu\n\n\nStep 1. Download sdk\n\n\nhttp://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html\n\n\n\n\nStep 2. Create folder jvm\n\n\nsudo mkdir /usr/lib/jvm/\n\n\n\n\nStep 3. cd to folder downloads jdk and run command\n\n\nsudo mv jdk1.7.0_x/ /usr/lib/jvm/jdk1.7.0_x\n\n\n\n\nRun install java\n\n\nsudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.7.0_x/jre/bin/java 0\n\n\n\n\nAdd path jdk : /usr/lib/jvm/jdk1.7.0_x\n\n\nsu -\nnano /etc/environment", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/installation/#installation", 
+            "text": "", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/installation/#ubuntu", 
             "text": "Step 1. Download sdk  http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html  Step 2. Create folder jvm  sudo mkdir /usr/lib/jvm/  Step 3. cd to folder downloads jdk and run command  sudo mv jdk1.7.0_x/ /usr/lib/jvm/jdk1.7.0_x", 
             "title": "Ubuntu"
         }, 
         {
-            "location": "/#run-install-java", 
+            "location": "/installation/#run-install-java", 
             "text": "sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.7.0_x/jre/bin/java 0  Add path jdk : /usr/lib/jvm/jdk1.7.0_x  su -\nnano /etc/environment", 
             "title": "Run install java"
         }, 
         {
-            "location": "/#2-hello-world-1", 
+            "location": "/introduction/", 
+            "text": "Java\n\n\nI can code Java, but... \n1\n\n\n\n\nBest Programming languages \n2\n\n\n\n\nInstallation \n3\n\n\n\n# cent os 6.5\nyum install java-1.7.0-openjdk-devel\n\n\n\n\nConcepts\n\n\n\nAnnotations\n\n\nTools\n\n\n\n\n\n\n\n\n\n\nBuild Tool\n\n\n\nTest\n\n\n\n\n\n\nGradle\n\n\nJUnit\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPatterns in Real Life\n\n\n\n\n\n\n\nFunny Story | Best Programming languages\n\n\n\n\n\n\n\nHow To Install Java on CentOS and Fedora\n\n\n\n\n\n\n\n\n\n\n2. Hello World \n1\n\n\npublic class HelloWorld {\n\n    public static void main(String[] args) {\n        // Prints \nHello, World\n to the terminal window.\n        System.out.println(\nHello, World\n);\n    }\n\n}\n\n\n\n\nJava: Parallel\n\n\nThread\n\n\nTimer\n\n\nJava: Configuration\n\n\n-VM options : VM options are loaded from the IDE_HOME\\bin\\\n[bits][.exe].vmoptions file.\n[1]\n\n-ea : enable assertions\n\n\n-ea -D[FILE_NAME]=\n$PATH_DATA\n\n\n\n\n\nJava: Web with Spring\n\n\n\n\n\n  \nSpring helps development teams everywhere build simple, portable, fast and flexible JVM-based systems and applications.\n\n\n\n\n\nComponents\n\n\n\nSpring Boot\n: Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can \"just run\". We take an opinionated view of the Spring platform and third-party libraries so you can get started with minimum fuss. Most Spring Boot applications need very little Spring configuration.\n\n\n\nSpring: Database\n\n\nDatabase Migration\n\n\nFlyway\n\n\nJava: Errors\n\n\nTwo Many Open Files \n1\n \n2\n\n\nEdit  \n/etc/sysctl.conf\n\n\nfs.file-max = 100000\n\n\n\n\nSpring, http://www.tomcatexpert.com/blog/2010/04/01/configuring-jdbc-pool-high-concurrency\n\n\n\n\n\n\n\n\n\n\nLinux Increase The Maximum Number Of Open Files / File Descriptors (FD)\n\n\n\n\n\n\n[java 1=\"Too\" 2=\"many\" 3=\"open\" 4=\"files\" 5=\"Spring\" 6=\"Hibernate\" 7=\"Tomcat\" language=\".net.SocketException:\"]\n/java", 
+            "title": "Introduction"
+        }, 
+        {
+            "location": "/introduction/#java", 
+            "text": "I can code Java, but...  1   Best Programming languages  2", 
+            "title": "Java"
+        }, 
+        {
+            "location": "/introduction/#2-hello-world-1", 
             "text": "public class HelloWorld {\n\n    public static void main(String[] args) {\n        // Prints  Hello, World  to the terminal window.\n        System.out.println( Hello, World );\n    }\n\n}", 
             "title": "2. Hello World 1"
         }, 
         {
-            "location": "/#java-data-structure", 
-            "text": "", 
-            "title": "Java: Data Structure"
-        }, 
-        {
-            "location": "/#java-datetime", 
-            "text": "Calendar c = Calendar.getInstance();", 
-            "title": "Java: datetime"
-        }, 
-        {
-            "location": "/#java-string-number", 
-            "text": "Convert  1  String.valueOf(1000)  Make a random  // create a random number from 0 to 99\n(new Random()).nextInt(100)", 
-            "title": "Java: string, number"
-        }, 
-        {
-            "location": "/#java-collection", 
-            "text": "", 
-            "title": "Java: collection"
-        }, 
-        {
-            "location": "/#set", 
-            "text": "import java.util.HashSet;\nimport java.util.Set;\n\npublic class HelloWorld{\n\n     public static void main(String []args){\n         Set Dog  dogs = new  HashSet Dog ();\n         Dog dog1 = new Dog( a , 1);\n         Dog dog2 = new Dog( a , 2);\n         Dog dog3 = new Dog( a , 1);\n         Dog dog4 = new Dog( b , 1);\n         dogs.add( dog1);\n         dogs.add( dog2);\n         dogs.add( dog3);\n         dogs.add( dog4);\n        System.out.println(dogs.size());\n     }\n}\n\n// 3  public class Dog {\n    public String name;\n    public int age;\n    public int value;\n    public Dog(String name, int age){\n        this.name = name;\n        this.age = age;\n        value = (this.name + String.valueOf(this.age)).hashCode();\n    }\n\n    @Override\n    public int hashCode() {\n        return value;\n    }\n\n    @Override\n    public boolean equals(Object obj) {\n        return (obj instanceof Dog   ((Dog) obj).value == this.value);\n    }\n}", 
-            "title": "Set"
-        }, 
-        {
-            "location": "/#list-1", 
-            "text": "List String  places = Arrays.asList( Buenos Aires ,  C\u00f3rdoba ,  La Plata );", 
-            "title": "List 1"
-        }, 
-        {
-            "location": "/#java-parallel", 
+            "location": "/introduction/#java-parallel", 
             "text": "Thread", 
             "title": "Java: Parallel"
         }, 
         {
-            "location": "/#timer", 
+            "location": "/introduction/#timer", 
             "text": "", 
             "title": "Timer"
         }, 
         {
-            "location": "/#java-configuration", 
+            "location": "/introduction/#java-configuration", 
             "text": "-VM options : VM options are loaded from the IDE_HOME\\bin\\ [bits][.exe].vmoptions file. [1] \n-ea : enable assertions  -ea -D[FILE_NAME]= $PATH_DATA", 
             "title": "Java: Configuration"
         }, 
         {
-            "location": "/#java-web-with-spring", 
+            "location": "/introduction/#java-web-with-spring", 
             "text": "Spring helps development teams everywhere build simple, portable, fast and flexible JVM-based systems and applications.", 
             "title": "Java: Web with Spring"
         }, 
         {
-            "location": "/#spring-database", 
+            "location": "/introduction/#spring-database", 
             "text": "", 
             "title": "Spring: Database"
         }, 
         {
-            "location": "/#database-migration", 
+            "location": "/introduction/#database-migration", 
             "text": "Flyway", 
             "title": "Database Migration"
         }, 
         {
-            "location": "/#java-ide", 
-            "text": "", 
-            "title": "Java: IDE"
-        }, 
-        {
-            "location": "/#intellij", 
-            "text": "\u251c\u2500\u2500 1. Project Manager\n\u251c\u2500\u2500 2. Search   Replace\n\u251c\u2500\u2500 3. Navigation\n\u251c\u2500\u2500 4. Formatting\n\u251c\u2500\u2500 5. Debugging\n\u251c\u2500\u2500 6. Build   Release\n\u2514\u2500\u2500 7. Git Integration", 
-            "title": "IntellIJ"
-        }, 
-        {
-            "location": "/#1-project-manager", 
-            "text": "1.1 Create New Project  1.2 Import Maven Project  https://www.jetbrains.com/help/idea/2016.1/importing-project-from-maven-model.html", 
-            "title": "1. Project Manager"
-        }, 
-        {
-            "location": "/#2-search-replace", 
-            "text": "Global Search  Shift Shift", 
-            "title": "2. Search &amp; Replace"
-        }, 
-        {
-            "location": "/#3-navigation", 
-            "text": "Next/Previous Error  F2  /  Shift + F2", 
-            "title": "3. Navigation"
-        }, 
-        {
-            "location": "/#4-formatting", 
-            "text": "Auto Format  Ctrl + Alt + L", 
-            "title": "4. Formatting"
-        }, 
-        {
-            "location": "/#java-package-manager", 
-            "text": "", 
-            "title": "Java: Package Manager"
-        }, 
-        {
-            "location": "/#gradle", 
-            "text": "", 
-            "title": "Gradle"
-        }, 
-        {
-            "location": "/#plugins", 
-            "text": "", 
-            "title": "Plugins"
-        }, 
-        {
-            "location": "/#application-plugin", 
-            "text": "Usages  1.  Using the application plugin  Add this line in  build.gradle  apply plugin: 'application'  2.   Configure the application main class  mainClassName =  org.gradle.sample.Main", 
-            "title": "Application plugin"
-        }, 
-        {
-            "location": "/#java-build-tool", 
-            "text": "", 
-            "title": "Java: Build Tool"
-        }, 
-        {
-            "location": "/#apache-ant", 
-            "text": "Apache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other. The main known usage of Ant is the build of Java applications. Ant supplies a number of built-in tasks allowing to compile, assemble, test and run Java applications. Ant can also be used effectively to build non Java applications, for instance C or C++ applications. More generally, Ant can be used to pilot any type of process which can be described in terms of targets and tasks.  1", 
-            "title": "Apache Ant"
-        }, 
-        {
-            "location": "/#install-ant", 
-            "text": "Download and extract Apache Ant 1.9.6  wget http://mirrors.viethosting.vn/apache//ant/binaries/apache-ant-1.9.6-bin.tar.gz\ntar -xzf apache-ant-1.9.6-bin.tar.gz  Set path to ant folder", 
-            "title": "Install Ant"
-        }, 
-        {
-            "location": "/#java-errors", 
+            "location": "/introduction/#java-errors", 
             "text": "", 
             "title": "Java: Errors"
         }, 
         {
-            "location": "/#two-many-open-files-1-2", 
-            "text": "Edit   /etc/sysctl.conf  fs.file-max = 100000  Spring, http://www.tomcatexpert.com/blog/2010/04/01/configuring-jdbc-pool-high-concurrency", 
+            "location": "/introduction/#two-many-open-files-1-2", 
+            "text": "Edit   /etc/sysctl.conf  fs.file-max = 100000  Spring, http://www.tomcatexpert.com/blog/2010/04/01/configuring-jdbc-pool-high-concurrency      Linux Increase The Maximum Number Of Open Files / File Descriptors (FD)    [java 1=\"Too\" 2=\"many\" 3=\"open\" 4=\"files\" 5=\"Spring\" 6=\"Hibernate\" 7=\"Tomcat\" language=\".net.SocketException:\"] /java", 
             "title": "Two Many Open Files 1 2"
         }, 
         {
-            "location": "/#java-production-docker", 
-            "text": "Production with  java  Base Image: [java] /java  Docker Folder  your-app/\n\u251c\u2500\u2500 app\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 bin\n\u2502   \u251c\u2500\u2500\u2500\u2500\u2500 your_app.sh\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 lib\n\u251c\u2500\u2500 Dockerfile\n\u2514\u2500\u2500 run.sh  Dockerfile  FROM java:7\n\nCOPY run.sh run.sh  run.sh  cd /app/bin\nchmod u+x your_app.sh\n./your_app.sh  Compose   service:\n  build: ./your_app\n  command: 'bash run.sh'      Linux Increase The Maximum Number Of Open Files / File Descriptors (FD)    [java 1=\"Too\" 2=\"many\" 3=\"open\" 4=\"files\" 5=\"Spring\" 6=\"Hibernate\" 7=\"Tomcat\" language=\".net.SocketException:\"] /java", 
+            "location": "/data_structure/", 
+            "text": "Data Structure\n\n\ndatetime\n\n\nCalendar c = Calendar.getInstance();\n\n\n\n\nstring, number\n\n\nConvert \n1\n\n\nString.valueOf(1000)\n\n\n\n\nMake a random\n\n\n// create a random number from 0 to 99\n(new Random()).nextInt(100)\n\n\n\n\nCollection\n\n\nSet\n\n\n\nimport java.util.HashSet;\nimport java.util.Set;\n\npublic class HelloWorld{\n\n     public static void main(String []args){\n         Set\nDog\n dogs = new  HashSet\nDog\n();\n         Dog dog1 = new Dog(\na\n, 1);\n         Dog dog2 = new Dog(\na\n, 2);\n         Dog dog3 = new Dog(\na\n, 1);\n         Dog dog4 = new Dog(\nb\n, 1);\n         dogs.add( dog1);\n         dogs.add( dog2);\n         dogs.add( dog3);\n         dogs.add( dog4);\n        System.out.println(dogs.size());\n     }\n}\n\n// 3\n\n\n\n\npublic class Dog {\n    public String name;\n    public int age;\n    public int value;\n    public Dog(String name, int age){\n        this.name = name;\n        this.age = age;\n        value = (this.name + String.valueOf(this.age)).hashCode();\n    }\n\n    @Override\n    public int hashCode() {\n        return value;\n    }\n\n    @Override\n    public boolean equals(Object obj) {\n        return (obj instanceof Dog \n ((Dog) obj).value == this.value);\n    }\n}\n\n\n\n\nList \n1\n\n\nList\nString\n places = Arrays.asList(\nBuenos Aires\n, \nC\u00f3rdoba\n, \nLa Plata\n);\n\n\n\n\n\n\n\n\n\n\n\n\nInitialization of an ArrayList in one line", 
+            "title": "Data Structure"
+        }, 
+        {
+            "location": "/data_structure/#data-structure", 
+            "text": "", 
+            "title": "Data Structure"
+        }, 
+        {
+            "location": "/data_structure/#datetime", 
+            "text": "Calendar c = Calendar.getInstance();", 
+            "title": "datetime"
+        }, 
+        {
+            "location": "/data_structure/#string-number", 
+            "text": "Convert  1  String.valueOf(1000)  Make a random  // create a random number from 0 to 99\n(new Random()).nextInt(100)", 
+            "title": "string, number"
+        }, 
+        {
+            "location": "/data_structure/#collection", 
+            "text": "", 
+            "title": "Collection"
+        }, 
+        {
+            "location": "/data_structure/#set", 
+            "text": "import java.util.HashSet;\nimport java.util.Set;\n\npublic class HelloWorld{\n\n     public static void main(String []args){\n         Set Dog  dogs = new  HashSet Dog ();\n         Dog dog1 = new Dog( a , 1);\n         Dog dog2 = new Dog( a , 2);\n         Dog dog3 = new Dog( a , 1);\n         Dog dog4 = new Dog( b , 1);\n         dogs.add( dog1);\n         dogs.add( dog2);\n         dogs.add( dog3);\n         dogs.add( dog4);\n        System.out.println(dogs.size());\n     }\n}\n\n// 3  public class Dog {\n    public String name;\n    public int age;\n    public int value;\n    public Dog(String name, int age){\n        this.name = name;\n        this.age = age;\n        value = (this.name + String.valueOf(this.age)).hashCode();\n    }\n\n    @Override\n    public int hashCode() {\n        return value;\n    }\n\n    @Override\n    public boolean equals(Object obj) {\n        return (obj instanceof Dog   ((Dog) obj).value == this.value);\n    }\n}", 
+            "title": "Set"
+        }, 
+        {
+            "location": "/data_structure/#list-1", 
+            "text": "List String  places = Arrays.asList( Buenos Aires ,  C\u00f3rdoba ,  La Plata );      Initialization of an ArrayList in one line", 
+            "title": "List 1"
+        }, 
+        {
+            "location": "/ide/", 
+            "text": "Java: IDE\n\n\nIntellIJ\n\n\n\u251c\u2500\u2500 1. Project Manager\n\u251c\u2500\u2500 2. Search \n Replace\n\u251c\u2500\u2500 3. Navigation\n\u251c\u2500\u2500 4. Formatting\n\u251c\u2500\u2500 5. Debugging\n\u251c\u2500\u2500 6. Build \n Release\n\u2514\u2500\u2500 7. Git Integration\n\n\n\n\n1. Project Manager\n\n\n1.1 Create New Project\n\n\n1.2 Import Maven Project\n\n\nhttps://www.jetbrains.com/help/idea/2016.1/importing-project-from-maven-model.html\n\n\n2. Search \n Replace\n\n\n\n\n\n\nGlobal Search\n\n\nShift Shift\n\n\n\n\n\n\n\n3. Navigation\n\n\n\n\n\n\nNext/Previous Error\n\n\nF2\n / \nShift + F2\n\n\n\n\n\n\n\n4. Formatting\n\n\n\n\n\n\nAuto Format\n\n\nCtrl + Alt + L", 
+            "title": "IDE"
+        }, 
+        {
+            "location": "/ide/#java-ide", 
+            "text": "", 
+            "title": "Java: IDE"
+        }, 
+        {
+            "location": "/ide/#intellij", 
+            "text": "\u251c\u2500\u2500 1. Project Manager\n\u251c\u2500\u2500 2. Search   Replace\n\u251c\u2500\u2500 3. Navigation\n\u251c\u2500\u2500 4. Formatting\n\u251c\u2500\u2500 5. Debugging\n\u251c\u2500\u2500 6. Build   Release\n\u2514\u2500\u2500 7. Git Integration", 
+            "title": "IntellIJ"
+        }, 
+        {
+            "location": "/ide/#1-project-manager", 
+            "text": "1.1 Create New Project  1.2 Import Maven Project  https://www.jetbrains.com/help/idea/2016.1/importing-project-from-maven-model.html", 
+            "title": "1. Project Manager"
+        }, 
+        {
+            "location": "/ide/#2-search-replace", 
+            "text": "Global Search  Shift Shift", 
+            "title": "2. Search &amp; Replace"
+        }, 
+        {
+            "location": "/ide/#3-navigation", 
+            "text": "Next/Previous Error  F2  /  Shift + F2", 
+            "title": "3. Navigation"
+        }, 
+        {
+            "location": "/ide/#4-formatting", 
+            "text": "Auto Format  Ctrl + Alt + L", 
+            "title": "4. Formatting"
+        }, 
+        {
+            "location": "/package_manager/", 
+            "text": "Java: Package Manager\n\n\nGradle\n\n\n\n\nPlugins\n\n\nApplication plugin\n\n\nUsages\n\n\n1.\n Using the application plugin\n\n\nAdd this line in \nbuild.gradle\n\n\napply plugin: 'application'\n\n\n\n\n2.\n  Configure the application main class\n\n\nmainClassName = \norg.gradle.sample.Main", 
+            "title": "Package Manager"
+        }, 
+        {
+            "location": "/package_manager/#java-package-manager", 
+            "text": "", 
+            "title": "Java: Package Manager"
+        }, 
+        {
+            "location": "/package_manager/#gradle", 
+            "text": "", 
+            "title": "Gradle"
+        }, 
+        {
+            "location": "/package_manager/#plugins", 
+            "text": "", 
+            "title": "Plugins"
+        }, 
+        {
+            "location": "/package_manager/#application-plugin", 
+            "text": "Usages  1.  Using the application plugin  Add this line in  build.gradle  apply plugin: 'application'  2.   Configure the application main class  mainClassName =  org.gradle.sample.Main", 
+            "title": "Application plugin"
+        }, 
+        {
+            "location": "/build_tool/", 
+            "text": "Java: Build Tool\n\n\nApache Ant\n\n\n\n\nApache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other. The main known usage of Ant is the build of Java applications. Ant supplies a number of built-in tasks allowing to compile, assemble, test and run Java applications. Ant can also be used effectively to build non Java applications, for instance C or C++ applications. More generally, Ant can be used to pilot any type of process which can be described in terms of targets and tasks. \n1\n\n\nInstall Ant\n\n\nDownload and extract Apache Ant 1.9.6\n\n\nwget http://mirrors.viethosting.vn/apache//ant/binaries/apache-ant-1.9.6-bin.tar.gz\ntar -xzf apache-ant-1.9.6-bin.tar.gz\n\n\n\n\nSet path to ant folder\n\n\nBuild Ant through proxy\n\n\n\nRequirement: 1.9.5+\n\n\nAdd the following lines into \nbuild.xml\n\n\ntarget name=\nivy-init\n depends=\nivy-proxy, ivy-probe-antlib, ivy-init-antlib\n description=\n--\n initialise Ivy settings\n\n  \nivy:settings file=\n${ivy.dir}/ivysettings.xml\n /\n\n  \n/target\n\n \ntarget name=\nivy-proxy\n description=\n--\nProxy Ivy settings\n\n  \nproperty name=\nproxy.host\n value=\nproxy.com\n /\n\n  \nproperty name=\nproxy.port\n value=\n8080\n /\n\n  \nproperty name=\nproxy.user\n value=\nuser\n /\n\n  \nproperty name=\nproxy.password\n value=\npassword\n /\n\n  \nsetproxy\n    proxyhost=\n${proxy.host}\n\n    proxyport=\n${proxy.port}\n\n    proxyuser=\n${proxy.user}\n\n    proxypassword=\n${proxy.password}\n /\n\n \n/target\n\n\n\n\n\n\n\n\n\n\n\n\n\nApache Ant\u2122", 
+            "title": "Build Tool"
+        }, 
+        {
+            "location": "/build_tool/#java-build-tool", 
+            "text": "", 
+            "title": "Java: Build Tool"
+        }, 
+        {
+            "location": "/build_tool/#apache-ant", 
+            "text": "Apache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other. The main known usage of Ant is the build of Java applications. Ant supplies a number of built-in tasks allowing to compile, assemble, test and run Java applications. Ant can also be used effectively to build non Java applications, for instance C or C++ applications. More generally, Ant can be used to pilot any type of process which can be described in terms of targets and tasks.  1", 
+            "title": "Apache Ant"
+        }, 
+        {
+            "location": "/build_tool/#install-ant", 
+            "text": "Download and extract Apache Ant 1.9.6  wget http://mirrors.viethosting.vn/apache//ant/binaries/apache-ant-1.9.6-bin.tar.gz\ntar -xzf apache-ant-1.9.6-bin.tar.gz  Set path to ant folder", 
+            "title": "Install Ant"
+        }, 
+        {
+            "location": "/production/", 
+            "text": "Java: Production (Docker)\n\n\nProduction with \njava\n\n\nBase Image: [java]\n/java\n\n\nDocker Folder\n\n\nyour-app/\n\u251c\u2500\u2500 app\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 bin\n\u2502   \u251c\u2500\u2500\u2500\u2500\u2500 your_app.sh\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 lib\n\u251c\u2500\u2500 Dockerfile\n\u2514\u2500\u2500 run.sh\n\n\n\n\nDockerfile\n\n\nFROM java:7\n\nCOPY run.sh run.sh\n\n\n\n\nrun.sh\n\n\ncd /app/bin\nchmod u+x your_app.sh\n./your_app.sh\n\n\n\n\nCompose\n\n\n service:\n  build: ./your_app\n  command: 'bash run.sh'", 
+            "title": "Production"
+        }, 
+        {
+            "location": "/production/#java-production-docker", 
+            "text": "Production with  java  Base Image: [java] /java  Docker Folder  your-app/\n\u251c\u2500\u2500 app\n\u2502\u00a0\u00a0 \u251c\u2500\u2500 bin\n\u2502   \u251c\u2500\u2500\u2500\u2500\u2500 your_app.sh\n\u2502\u00a0\u00a0 \u2514\u2500\u2500 lib\n\u251c\u2500\u2500 Dockerfile\n\u2514\u2500\u2500 run.sh  Dockerfile  FROM java:7\n\nCOPY run.sh run.sh  run.sh  cd /app/bin\nchmod u+x your_app.sh\n./your_app.sh  Compose   service:\n  build: ./your_app\n  command: 'bash run.sh'", 
             "title": "Java: Production (Docker)"
         }
     ]
