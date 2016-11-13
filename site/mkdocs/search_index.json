@@ -167,7 +167,7 @@
         }, 
         {
             "location": "/package_manager/", 
-            "text": "Java: Package Manager\n\n\nGradle\n\n\n\n\nPlugins\n\n\nApplication plugin\n\n\nUsages\n\n\n1.\n Using the application plugin\n\n\nAdd this line in \nbuild.gradle\n\n\napply plugin: 'application'\n\n\n\n\n2.\n  Configure the application main class\n\n\nmainClassName = \norg.gradle.sample.Main", 
+            "text": "Java: Package Manager\n\n\nGradle\n\n\n\n\nCreate your first project with gradle\n\n\nStep 1: Create new project folder\n\n\nmkdir gradle_sample\n\n\n\n\nStep 2: Make folder structure\n\n\ngradle init --type java-library\n\n\n\n\nStep 3: Import to IntelliJ\n\n\nOpen IntelliJ, click File \n New... \n Project From Existing Sources... \n\n\n\n\nPlugins\n\n\nApplication plugin\n\n\nUsages\n\n\n1.\n Using the application plugin\n\n\nAdd this line in \nbuild.gradle\n\n\napply plugin: 'application'\n\n\n\n\n2.\n  Configure the application main class\n\n\nmainClassName = \norg.gradle.sample.Main", 
             "title": "Package Manager"
         }, 
         {
@@ -179,6 +179,11 @@
             "location": "/package_manager/#gradle", 
             "text": "", 
             "title": "Gradle"
+        }, 
+        {
+            "location": "/package_manager/#create-your-first-project-with-gradle", 
+            "text": "Step 1: Create new project folder  mkdir gradle_sample  Step 2: Make folder structure  gradle init --type java-library  Step 3: Import to IntelliJ  Open IntelliJ, click File   New...   Project From Existing Sources...", 
+            "title": "Create your first project with gradle"
         }, 
         {
             "location": "/package_manager/#plugins", 
