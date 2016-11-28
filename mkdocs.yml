@@ -3,10 +3,11 @@ site_author: "Vu Anh"
 google_analytics: ["UA-68978617-1", "magizbox.com"]
 
 pages:
-- "Home": 'index.md'
-- "Installation": 'installation.md'
-- "Docs":
+- "<span class='fa fa-home'></span> Home": "index.md"
+- "<span class='fa fa-cloud-download'></span> Getting Started": 'getting_started.md'
+- "<span class='fa fa-book'></span> Learn":
   - "Introduction": "introduction.md"
+  - "Basic Syntax": "basic_syntax.md"
   - "Data Structure": "data_structure.md"
   - "IDE": "ide.md"
   - "Package Manager": "package_manager.md"

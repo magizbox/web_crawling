@@ -69,24 +69,30 @@
                 
                 
                     <li >
-                        <a href="..">Home</a>
+                        <a href=".."><span class='fa fa-home'></span> Home</a>
                     </li>
                 
                 
                 
                     <li >
-                        <a href="../installation/">Installation</a>
+                        <a href="../getting_started/"><span class='fa fa-cloud-download'></span> Getting Started</a>
                     </li>
                 
                 
                 
                     <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class='fa fa-book'></span> Learn <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
     <a href="../introduction/">Introduction</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../basic_syntax/">Basic Syntax</a>
 </li>
 
                         
@@ -135,7 +141,7 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../introduction/">
+                        <a rel="next" href="../basic_syntax/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
@@ -167,8 +173,9 @@
     
         <li class="main "><a href="#collection">Collection</a></li>
         
-    
-        <li class="main "><a href="#set">Set</a></li>
+            <li><a href="#arrays">Arrays</a></li>
+        
+            <li><a href="#set">Set</a></li>
         
             <li><a href="#list-1">List 1</a></li>
         
@@ -193,7 +200,36 @@
 </code></pre>
 
 <h1 id="collection">Collection</h1>
-<h1 id="set">Set</h1>
+<h2 id="arrays">Arrays</h2>
+<p>Arrays in Java are also objects. They need to be declared and then created. In order to declare a variable that will hold an array of integers, we use the following syntax:</p>
+<pre><code class="java">int[] arr;
+</code></pre>
+
+<p>Notice there is no size, since we didn't create the array yet.</p>
+<pre><code class="java">arr = new int[10];
+</code></pre>
+
+<p>This will create a new array with the size of 10. We can check the size by printing the array's length:</p>
+<pre><code class="java">System.out.println(arr.length);
+</code></pre>
+
+<p>We can access the array and set values:</p>
+<pre><code class="java">arr[0] = 4;
+arr[1] = arr[0] + 5;
+</code></pre>
+
+<p>Java arrays are 0 based, which means the first element in an array is accessed at index 0 (e.g: arr[0], which accesses the first element). Also, as an example, an array of size 5 will only go up to index 4 due to it being 0 based.</p>
+<pre><code class="java">int[] arr = new int[5]
+//accesses and sets the first element
+arr[0] = 4;
+</code></pre>
+
+<p>We can also create an array with values in the same line:</p>
+<pre><code class="java">int[] arr = {1, 2, 3, 4, 5};
+</code></pre>
+
+<p>Don't try to print the array without a loop, it will print something nasty like [I@f7e6a96.</p>
+<h2 id="set">Set</h2>
 <pre><code class="java">
 import java.util.HashSet;
 import java.util.Set;

@@ -1,3 +1,103 @@
+# Variable & Types
+
+Although Java is object oriented, not all types are objects. It is built on top of basic variable types called primitives.
+
+Here is a list of all primitives in Java:
+
+* `byte` (number, 1 byte)
+* `short` (number, 2 bytes)
+* `int` (number, 4 bytes)
+* `long` (number, 8 bytes)
+* `float` (float number, 4 bytes)
+* `double` (float number, 8 bytes)
+* `char` (a character, 2 bytes)
+* `boolean` (true or false, 1 byte)
+Java is a strong typed language, which means variables need to be defined before we use them.
+
+## Numbers
+
+To declare and assign a number use the following syntax:
+
+```java
+int myNumber;
+myNumber = 5;
+```
+
+Or you can combine them:
+
+```java
+int myNumber = 5;
+```
+
+To define a double floating point number, use the following syntax:
+
+```java
+double d = 4.5;
+d = 3.0;
+```
+If you want to use float, you will have to cast:
+
+```java
+float f = (float) 4.5;
+```
+
+Or, You can use this:
+
+```java
+float f = 4.5f (f is a shorter way of casting float)
+```
+
+## Characters and Strings
+
+In Java, a character is it's own type and it's not simply a number, so it's not common to put an ascii value in it, there is a special syntax for chars:
+
+```java
+char c = 'g';
+```
+
+String is not a primitive. It's a real type, but Java has special treatment for String.
+
+Here are some ways to use a string:
+
+```java
+// Create a string with a constructor
+String s1 = new String("Who let the dogs out?");
+// Just using "" creates a string, so no need to write it the previous way.
+String s2 = "Who who who who!";
+// Java defined the operator + on strings to concatenate:
+String s3 = s1 + s2;
+```
+
+There is no operator overloading in Java! The operator + is only defined for strings, you will never see it with other objects, only primitives.
+
+You can also concat string to primitives:
+
+```java
+int num = 5;
+String s = "I have " + num + " cookies"; //Be sure not to use "" with primitives.
+```
+
+## boolean
+
+Every comparison operator in java will return the type `boolean` that not like other languages can only accept two special values: `true` or `false`.
+
+```java
+boolean b = false;
+b = true;
+
+boolean toBe = false;
+b = toBe || !toBe;
+if (b) {
+    System.out.println(toBe);
+}
+
+int children = 0;
+b = children; // Will not work
+if (children) { // Will not work
+    // Will not work
+}
+```
+
 #  Operators
 
 Java provides a rich set of operators to manipulate variables. We can divide all the Java operators into the following groups:
@@ -10,6 +110,7 @@ Java provides a rich set of operators to manipulate variables. We can divide all
 * Misc Operators
 
 ## The Arithmetic Operators
+
 Arithmetic operators are used in mathematical expressions in the same way that they are used in algebra.
 
 The following table lists the arithmetic operators:
@@ -226,9 +327,13 @@ There are few other operators supported by Java Language.
 Conditional Operator ( ? : )
 Conditional operator is also known as the ternary operator. This operator consists of three operands and is used to evaluate Boolean expressions. The goal of the operator is to decide which value should be assigned to the variable. The operator is written as:
 
+```java
 variable x = (expression) ? value if true : value if false
+```
+
 Following is the example:
 
+```java
 public class Test {
 
    public static void main(String args[]){
@@ -241,10 +346,14 @@ public class Test {
       System.out.println( "Value of b is : " + b );
    }
 }
+```
+
 This would produce the following result ?
 
+```
 Value of b is : 30
 Value of b is : 20
+```
 
 ##  Precedence of Operators
 Operator precedence determines the grouping of terms in an expression. This affects how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has higher precedence than the addition operator:
@@ -268,3 +377,111 @@ Logical AND 	&& 	Left to right
 Logical OR 	|| 	Left to right 
 Conditional 	?: 	Right to left 
 Assignment 	= += -= *= /= %= >>= <<= &= ^= |= 	Right to left 
+
+# Conditional
+
+Java uses boolean variables to evaluate conditions. The boolean values `true` and `false` are returned when an expression is compared or evaluated. For example:
+
+```java
+int a = 4;
+boolean b = a == 4;
+
+if (b) {
+    System.out.println("It's true!");
+}
+```
+
+Of course we don't normally assign a conditional expression to a boolean, we just use the short version:
+
+```java
+int a = 4;
+
+if (a == 4) {
+    System.out.println("Ohhh! So a is 4!");
+}
+```
+
+## Boolean operators
+
+There aren't that many operators to use in conditional statements and most of them are pretty strait forward:
+
+```java
+int a = 4;
+int b = 5;
+boolean result;
+result = a < b; // true
+result = a > b; // false
+result = a <= 4 // a smaller or equal to 4 - true
+result = b >= 6 // b bigger or equal to 6 - false
+result = a == b // a equal to b - false
+result = a != b // a is not equal to b - true
+result = a > b || a < b // Logical or - true
+result = 3 < a && a < 6 // Logical and - true
+result = !result // Logical not - false
+```
+
+## if - else and between
+
+The if, else statement in java is pretty simple.
+
+```java
+if (a == b) {
+    // a and b are equal, let's do something cool
+}
+```
+
+And we can also add an else statement after an if, to do something if the condition is not true
+
+```java
+if (a == b) {
+    // We already know this part
+} else {
+    // a and b are not equal... :/
+}
+```
+
+The if - else statements doesn't have to be in several lines with {}, if can be used in one line, or without the {}, for a single line statment.
+
+```java
+if (a == b)
+    System.out.println("Another line Wow!");
+else
+    System.out.println("Double rainbow!");
+```
+
+Although this method might be useful for making your code shorter by using fewer lines, we strongly recommend for beginners not to use this short version of statements and always use the full version with {}. This goes to every statement that can be shorted to a single line (for, while, etc).
+
+## The ugly side of if
+
+There is a another way to write a one line if - else statement by using the operator ? :
+
+```java
+int a = 4;
+int result = a == 4 ? 1 : 8;
+
+// result will be 1
+// This is equivalent to
+int result;
+
+if (a == 4) {
+    result = 1;
+} else {
+    result = 8;
+}
+```
+
+Again, we strongly recommend for beginners not to use this version of if.
+
+## == and equals
+
+The operator == works a bit different on objects than on primitives. When we are using objects and want to check if they are equal, the operator == will say if they are the same, if you want to check if they are logically equal, you should use the equals method on the object. For example:
+
+```java
+String a = new String("Wow");
+String b = new String("Wow");
+String sameA = a;
+
+boolean r1 = a == b;      // This is false, since a and b are not the same object
+boolean r2 = a.equals(b); // This is true, since a and b are logically equals
+boolean r3 = a == sameA;  // This is true, since a and sameA are really the same object
+```
