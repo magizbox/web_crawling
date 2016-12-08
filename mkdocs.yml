@@ -9,7 +9,9 @@ pages:
   - "Introduction": "introduction.md"
   - "Basic Syntax": "basic_syntax.md"
   - "Data Structure": "data_structure.md"
-  - "OOP": "oop.md"
+  - "OOP":
+    - "Overview": "oop.md"
+    - "Inheritance": "oop_inheritance.md"
   - "IDE": "ide.md"
   - "Package Manager": "package_manager.md"
   - "Build Tool": "build_tool.md"

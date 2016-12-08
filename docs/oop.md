@@ -1,7 +1,7 @@
 Java is an Object-Oriented Language. As a language that has the Object-Oriented feature, Java supports the following fundamental concepts
 
-* Polymorphism
 * Inheritance
+* Polymorphism
 * Encapsulation
 * Abstraction
 * Classes
@@ -15,7 +15,7 @@ In this chapter, we will look into the concepts - Classes and Objects.
 * **Object** − Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behaviors – wagging the tail, barking, eating. An object is an instance of a class.
 * **Class** − A class can be defined as a template/blueprint that describes the behavior/state that the object of its type support.
 
-# Objects in Java
+# Objects
 Let us now look deep into what are objects. If we consider the real-world, we can find many objects around us, cars, dogs, humans, etc. All these objects have a state and a behavior.
 
 If we consider a dog, then its state is - name, breed, color, and the behavior is - barking, wagging the tail, running.
@@ -26,7 +26,7 @@ Software objects also have a state and a behavior. A software object's state is 
 
 So in software development, methods operate on the internal state of an object and the object-to-object communication is done via methods.
 
-# Classes in Java
+# Classes
 
 A class is a blueprint from which individual objects are created.
 
