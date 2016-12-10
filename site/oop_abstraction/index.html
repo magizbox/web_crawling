@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Polymorphism - JavaTutorial</title>
+	<title>Abstraction - JavaTutorial</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -126,14 +126,14 @@
 
         
             
-<li class="active">
-    <a href="./">Polymorphism</a>
+<li >
+    <a href="../oop_polymorphism/">Polymorphism</a>
 </li>
 
         
             
-<li >
-    <a href="../oop_abstraction/">Abstraction</a>
+<li class="active">
+    <a href="./">Abstraction</a>
 </li>
 
         
@@ -180,12 +180,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../oop_inheritance/">
+                        <a rel="next" href="../oop_polymorphism/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../oop_abstraction/">
+                        <a rel="prev" href="../ide/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -201,51 +201,35 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#example">Example</a></li>
+        <li class="main active"><a href="#abstract-class">Abstract Class</a></li>
         
     
-        <li class="main "><a href="#virtual-methods">Virtual Methods</a></li>
+        <li class="main "><a href="#inheriting-the-abstract-class">Inheriting the Abstract Class</a></li>
         
     
-        <li class="main "><a href="#related-readings">Related Readings</a></li>
+        <li class="main "><a href="#abstract-methods">Abstract Methods</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p><strong>Polymorphism</strong> is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.</p>
-<p>Any Java object that can pass more than one IS-A test is considered to be polymorphic. In Java, all Java objects are polymorphic since any object will pass the IS-A test for their own type and for the class Object.</p>
-<p>It is important to know that the only possible way to access an object is through a reference variable. A reference variable can be of only one type. Once declared, the type of a reference variable cannot be changed.</p>
-<p>The reference variable can be reassigned to other objects provided that it is not declared final. The type of the reference variable would determine the methods that it can invoke on the object.</p>
-<p>A reference variable can refer to any object of its declared type or any subtype of its declared type. A reference variable can be declared as a class or interface type.</p>
-<h2 id="example">Example</h2>
-<p>Let us look at an example.</p>
-<pre><code class="java">public interface Vegetarian{}
-public class Animal{}
-public class Deer extends Animal implements Vegetarian{}
-</code></pre>
-
-<p>Now, the Deer class is considered to be polymorphic since this has multiple inheritance. Following are true for the above examples</p>
+<p>As per dictionary, <em>abstraction</em> is the quality of dealing with ideas rather than events. For example, when you consider the case of e-mail, complex details such as what happens as soon as you send an e-mail, the protocol your e-mail server uses are hidden from the user. Therefore, to send an e-mail you just need to type the content, mention the address of the receiver, and click send.</p>
+<p>Likewise in Object-oriented programming, abstraction is a process of hiding the implementation details from the user, only the functionality will be provided to the user. In other words, the user will have the information on what the object does instead of how it does it.</p>
+<p>In Java, abstraction is achieved using Abstract classes and interfaces.</p>
+<h2 id="abstract-class">Abstract Class</h2>
+<p>A class which contains the abstract keyword in its declaration is known as abstract class.</p>
 <ul>
-<li>A Deer IS-A Animal</li>
-<li>A Deer IS-A Vegetarian</li>
-<li>A Deer IS-A Deer</li>
-<li>A Deer IS-A Object</li>
+<li>Abstract classes may or may not contain abstract methods, i.e., methods without body ( public void get(); )</li>
+<li>But, if a class has at least one abstract method, then the class must be declared abstract.</li>
+<li>If a class is declared abstract, it cannot be instantiated.</li>
+<li>To use an abstract class, you have to inherit it from another class, provide implementations to the abstract methods in it.</li>
+<li>If you inherit an abstract class, you have to provide implementations to all the abstract methods in it.</li>
 </ul>
-<p>When we apply the reference variable facts to a Deer object reference, the following declarations are legal</p>
-<pre><code class="java">Deer d = new Deer();
-Animal a = d;
-Vegetarian v = d;
-Object o = d;
-</code></pre>
-
-<p>All the reference variables d, a, v, o refer to the same Deer object in the heap.</p>
-<h2 id="virtual-methods">Virtual Methods</h2>
-<p>In this section, I will show you how the behavior of overridden methods in Java allows you to take advantage of polymorphism when designing your classes.</p>
-<p>We already have discussed method overriding, where a child class can override a method in its parent. An overridden method is essentially hidden in the parent class, and is not invoked unless the child class uses the super keyword within the overriding method.</p>
+<p><strong>Example</strong></p>
+<p>This section provides you an example of the abstract class. To create an abstract class, just use the <em>abstract</em> keyword before the class keyword, in the class declaration.</p>
 <pre><code class="java">/* File name : Employee.java */
-public class Employee {
+public abstract class Employee {
    private String name;
    private String address;
    private int number;
@@ -255,6 +239,11 @@ public class Employee {
       this.name = name;
       this.address = address;
       this.number = number;
+   }
+
+   public double computePay() {
+     System.out.println(&quot;Inside Employee computePay&quot;);
+     return 0.0;
    }
 
    public void mailCheck() {
@@ -283,10 +272,32 @@ public class Employee {
 }
 </code></pre>
 
-<p>Now suppose we extend Employee class as follows</p>
+<p>You can observe that except abstract methods the Employee class is same as normal class in Java. The class is now abstract, but it still has three fields, seven methods, and one constructor.</p>
+<p>Now you can try to instantiate the Employee class in the following way</p>
+<pre><code class="java">/* File name : AbstractDemo.java */
+public class AbstractDemo {
+
+   public static void main(String [] args) {
+      /* Following is not allowed and would raise error */
+      Employee e = new Employee(&quot;George W.&quot;, &quot;Houston, TX&quot;, 43);
+      System.out.println(&quot;\n Call mailCheck using Employee reference--&quot;);
+      e.mailCheck();
+   }
+}
+</code></pre>
+
+<p>When you compile the above class, it gives you the following error</p>
+<pre><code>Employee.java:46: Employee is abstract; cannot be instantiated
+      Employee e = new Employee(&quot;George W.&quot;, &quot;Houston, TX&quot;, 43);
+                   ^
+1 error
+</code></pre>
+
+<h2 id="inheriting-the-abstract-class">Inheriting the Abstract Class</h2>
+<p>We can inherit the properties of Employee class just like concrete class in the following way</p>
 <pre><code class="java">/* File name : Salary.java */
 public class Salary extends Employee {
-   private double salary; // Annual salary
+   private double salary;   // Annual salary
 
    public Salary(String name, String address, int number, double salary) {
       super(name, address, number);
@@ -295,8 +306,7 @@ public class Salary extends Employee {
 
    public void mailCheck() {
       System.out.println(&quot;Within mailCheck of Salary class &quot;);
-      System.out.println(&quot;Mailing check to &quot; + getName()
-      + &quot; with salary &quot; + salary);
+      System.out.println(&quot;Mailing check to &quot; + getName() + &quot; with salary &quot; + salary);
    }
 
    public double getSalary() {
@@ -316,25 +326,24 @@ public class Salary extends Employee {
 }
 </code></pre>
 
-<p>Now, you study the following program carefully and try to determine its output</p>
-<pre><code class="java">/* File name : VirtualDemo.java */
-public class VirtualDemo {
+<p>Here, you cannot instantiate the Employee class, but you can instantiate the Salary Class, and using this instance you can access all the three fields and seven methods of Employee class as shown below.</p>
+<pre><code class="java">/* File name : AbstractDemo.java */
+public class AbstractDemo {
 
    public static void main(String [] args) {
       Salary s = new Salary(&quot;Mohd Mohtashim&quot;, &quot;Ambehta, UP&quot;, 3, 3600.00);
       Employee e = new Salary(&quot;John Adams&quot;, &quot;Boston, MA&quot;, 2, 2400.00);
       System.out.println(&quot;Call mailCheck using Salary reference --&quot;);
       s.mailCheck();
-      System.out.println(&quot;\n Call mailCheck using Employee reference--&quot;);
+      System.out.println(&quot;\nCall mailCheck using Employee reference--&quot;);
       e.mailCheck();
    }
 }
 </code></pre>
 
-<p>This will produce the following result</p>
+<p>This produces the following result</p>
 <pre><code>Constructing an Employee
 Constructing an Employee
-
 Call mailCheck using Salary reference --
 Within mailCheck of Salary class
 Mailing check to Mohd Mohtashim with salary 3600.0
@@ -344,15 +353,43 @@ Within mailCheck of Salary class
 Mailing check to John Adams with salary 2400.0
 </code></pre>
 
-<p>Here, we instantiate two Salary objects. One using a Salary reference <strong>s</strong>, and the other using an Employee reference <strong>e</strong>.</p>
-<p>While invoking <em>s.mailCheck()</em>, the compiler sees <em>mailCheck()</em> in the Salary class at compile time, and the JVM invokes <em>mailCheck()</em> in the Salary class at run time.</p>
-<p><em>mailCheck()</em> on <strong>e</strong> is quite different because <strong>e</strong> is an Employee reference. When the compiler sees <em>e.mailCheck()</em>, the compiler sees the <em>mailCheck()</em> method in the Employee class.</p>
-<p>Here, at compile time, the compiler used mailCheck() in Employee to validate this statement. At run time, however, the JVM invokes mailCheck() in the Salary class.</p>
-<p>This behavior is referred to as virtual method invocation, and these methods are referred to as virtual methods. An overridden method is invoked at run time, no matter what data type the reference is that was used in the source code at compile time.</p>
-<h2 id="related-readings">Related Readings</h2>
+<h2 id="abstract-methods">Abstract Methods</h2>
+<p>If you want a class to contain a particular method but you want the actual implementation of that method to be determined by child classes, you can declare the method in the parent class as an abstract.</p>
 <ul>
-<li><a href="https://www.tutorialspoint.com/java/java_polymorphism.htm">"Java Polymorphism". <em>www.tutorialspoint.com</em>. N.p., 2016. Web. 10 Dec. 2016.</a></li>
-</ul></div>
+<li>abstract keyword is used to declare the method as abstract.</li>
+<li>You have to place the abstract keyword before the method name in the method declaration.</li>
+<li>An abstract method contains a method signature, but no method body.</li>
+<li>Instead of curly braces, an abstract method will have a semoi colon (;) at the end.</li>
+</ul>
+<p>Following is an example of the abstract method.</p>
+<pre><code class="java">public abstract class Employee {
+   private String name;
+   private String address;
+   private int number;
+
+   public abstract double computePay();
+   // Remainder of class definition
+}
+</code></pre>
+
+<p>Declaring a method as abstract has two consequences</p>
+<ul>
+<li>The class containing it must be declared as abstract.</li>
+<li>Any class inheriting the current class must either override the abstract method or declare itself as abstract.</li>
+</ul>
+<p><strong>Note</strong> − Eventually, a descendant class has to implement the abstract method; otherwise, you would have a hierarchy of abstract classes that cannot be instantiated.</p>
+<p>Suppose Salary class inherits the Employee class, then it should implement the <strong>computePay()</strong> method as shown below</p>
+<pre><code class="java">/* File name : Salary.java */
+public class Salary extends Employee {
+   private double salary;   // Annual salary
+
+   public double computePay() {
+      System.out.println(&quot;Computing salary pay for &quot; + getName());
+      return salary/52;
+   }
+   // Remainder of class definition
+}
+</code></pre></div>
             
         </div>
 

@@ -1,11 +1,10 @@
 Java is an Object-Oriented Language. As a language that has the Object-Oriented feature, Java supports the following fundamental concepts
 
+* Classes and Objects
+* Encapsulation
 * Inheritance
 * Polymorphism
-* Encapsulation
 * Abstraction
-* Classes
-* Objects
 * Instance
 * Method
 * Message Parsing
