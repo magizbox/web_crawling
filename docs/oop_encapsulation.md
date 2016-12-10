@@ -76,3 +76,7 @@ Name : James Age : 20
 * The fields of a class can be made read-only or write-only.
 * A class can have total control over what is stored in its fields.
 * The users of a class do not know how the class stores its data. A class can change the data type of a field and users of the class do not need to change any of their code.
+
+## Related Readings
+
+* ["Java Inheritance". www.tutorialspoint.com. N.p., 2016. Web. 10 Dec. 2016.](https://www.tutorialspoint.com/java/java_inheritance.htm)

@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Data Structure - JavaTutorial</title>
+	<title>Polymorphism - JavaTutorial</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -97,8 +97,8 @@
 
                         
                             
-<li class="active">
-    <a href="./">Data Structure</a>
+<li >
+    <a href="../data_structure/">Data Structure</a>
 </li>
 
                         
@@ -126,8 +126,8 @@
 
         
             
-<li >
-    <a href="../oop_polymorphism/">Polymorphism</a>
+<li class="active">
+    <a href="./">Polymorphism</a>
 </li>
 
         
@@ -174,12 +174,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../basic_syntax/">
+                        <a rel="next" href="../oop_inheritance/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../oop/">
+                        <a rel="prev" href="../ide/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -195,131 +195,158 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#data-structure">Data Structure</a></li>
+        <li class="main active"><a href="#example">Example</a></li>
         
     
-        <li class="main "><a href="#datetime">datetime</a></li>
+        <li class="main "><a href="#virtual-methods">Virtual Methods</a></li>
         
     
-        <li class="main "><a href="#string-number">string, number</a></li>
-        
-    
-        <li class="main "><a href="#collection">Collection</a></li>
-        
-            <li><a href="#arrays">Arrays</a></li>
-        
-            <li><a href="#set">Set</a></li>
-        
-            <li><a href="#list-1">List 1</a></li>
+        <li class="main "><a href="#related-readings">Related Readings</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="data-structure">Data Structure</h1>
-<h1 id="datetime">datetime</h1>
-<pre><code>Calendar c = Calendar.getInstance();
+<p><strong>Polymorphism</strong> is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.</p>
+<p>Any Java object that can pass more than one IS-A test is considered to be polymorphic. In Java, all Java objects are polymorphic since any object will pass the IS-A test for their own type and for the class Object.</p>
+<p>It is important to know that the only possible way to access an object is through a reference variable. A reference variable can be of only one type. Once declared, the type of a reference variable cannot be changed.</p>
+<p>The reference variable can be reassigned to other objects provided that it is not declared final. The type of the reference variable would determine the methods that it can invoke on the object.</p>
+<p>A reference variable can refer to any object of its declared type or any subtype of its declared type. A reference variable can be declared as a class or interface type.</p>
+<h2 id="example">Example</h2>
+<p>Let us look at an example.</p>
+<pre><code class="java">public interface Vegetarian{}
+public class Animal{}
+public class Deer extends Animal implements Vegetarian{}
 </code></pre>
 
-<h1 id="string-number">string, number</h1>
-<p>Convert <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
-<pre><code class="java">String.valueOf(1000)
+<p>Now, the Deer class is considered to be polymorphic since this has multiple inheritance. Following are true for the above examples</p>
+<ul>
+<li>A Deer IS-A Animal</li>
+<li>A Deer IS-A Vegetarian</li>
+<li>A Deer IS-A Deer</li>
+<li>A Deer IS-A Object</li>
+</ul>
+<p>When we apply the reference variable facts to a Deer object reference, the following declarations are legal</p>
+<pre><code class="java">Deer d = new Deer();
+Animal a = d;
+Vegetarian v = d;
+Object o = d;
 </code></pre>
 
-<p>Make a random</p>
-<pre><code class="java">// create a random number from 0 to 99
-(new Random()).nextInt(100)
-</code></pre>
+<p>All the reference variables d, a, v, o refer to the same Deer object in the heap.</p>
+<h2 id="virtual-methods">Virtual Methods</h2>
+<p>In this section, I will show you how the behavior of overridden methods in Java allows you to take advantage of polymorphism when designing your classes.</p>
+<p>We already have discussed method overriding, where a child class can override a method in its parent. An overridden method is essentially hidden in the parent class, and is not invoked unless the child class uses the super keyword within the overriding method.</p>
+<pre><code class="java">/* File name : Employee.java */
+public class Employee {
+   private String name;
+   private String address;
+   private int number;
 
-<h1 id="collection">Collection</h1>
-<h2 id="arrays">Arrays</h2>
-<p>Arrays in Java are also objects. They need to be declared and then created. In order to declare a variable that will hold an array of integers, we use the following syntax:</p>
-<pre><code class="java">int[] arr;
-</code></pre>
+   public Employee(String name, String address, int number) {
+      System.out.println(&quot;Constructing an Employee&quot;);
+      this.name = name;
+      this.address = address;
+      this.number = number;
+   }
 
-<p>Notice there is no size, since we didn't create the array yet.</p>
-<pre><code class="java">arr = new int[10];
-</code></pre>
+   public void mailCheck() {
+      System.out.println(&quot;Mailing a check to &quot; + this.name + &quot; &quot; + this.address);
+   }
 
-<p>This will create a new array with the size of 10. We can check the size by printing the array's length:</p>
-<pre><code class="java">System.out.println(arr.length);
-</code></pre>
+   public String toString() {
+      return name + &quot; &quot; + address + &quot; &quot; + number;
+   }
 
-<p>We can access the array and set values:</p>
-<pre><code class="java">arr[0] = 4;
-arr[1] = arr[0] + 5;
-</code></pre>
+   public String getName() {
+      return name;
+   }
 
-<p>Java arrays are 0 based, which means the first element in an array is accessed at index 0 (e.g: arr[0], which accesses the first element). Also, as an example, an array of size 5 will only go up to index 4 due to it being 0 based.</p>
-<pre><code class="java">int[] arr = new int[5]
-//accesses and sets the first element
-arr[0] = 4;
-</code></pre>
+   public String getAddress() {
+      return address;
+   }
 
-<p>We can also create an array with values in the same line:</p>
-<pre><code class="java">int[] arr = {1, 2, 3, 4, 5};
-</code></pre>
+   public void setAddress(String newAddress) {
+      address = newAddress;
+   }
 
-<p>Don't try to print the array without a loop, it will print something nasty like [I@f7e6a96.</p>
-<h2 id="set">Set</h2>
-<pre><code class="java">
-import java.util.HashSet;
-import java.util.Set;
-
-public class HelloWorld{
-
-     public static void main(String []args){
-         Set&lt;Dog&gt; dogs = new  HashSet&lt;Dog&gt;();
-         Dog dog1 = new Dog(&quot;a&quot;, 1);
-         Dog dog2 = new Dog(&quot;a&quot;, 2);
-         Dog dog3 = new Dog(&quot;a&quot;, 1);
-         Dog dog4 = new Dog(&quot;b&quot;, 1);
-         dogs.add( dog1);
-         dogs.add( dog2);
-         dogs.add( dog3);
-         dogs.add( dog4);
-        System.out.println(dogs.size());
-     }
-}
-
-// 3
-</code></pre>
-
-<pre><code class="java">public class Dog {
-    public String name;
-    public int age;
-    public int value;
-    public Dog(String name, int age){
-        this.name = name;
-        this.age = age;
-        value = (this.name + String.valueOf(this.age)).hashCode();
-    }
-
-    @Override
-    public int hashCode() {
-        return value;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        return (obj instanceof Dog &amp;&amp; ((Dog) obj).value == this.value);
-    }
+   public int getNumber() {
+      return number;
+   }
 }
 </code></pre>
 
-<h2 id="list-1">List <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></h2>
-<pre><code>List&lt;String&gt; places = Arrays.asList(&quot;Buenos Aires&quot;, &quot;Córdoba&quot;, &quot;La Plata&quot;);
+<p>Now suppose we extend Employee class as follows</p>
+<pre><code class="java">/* File name : Salary.java */
+public class Salary extends Employee {
+   private double salary; // Annual salary
+
+   public Salary(String name, String address, int number, double salary) {
+      super(name, address, number);
+      setSalary(salary);
+   }
+
+   public void mailCheck() {
+      System.out.println(&quot;Within mailCheck of Salary class &quot;);
+      System.out.println(&quot;Mailing check to &quot; + getName()
+      + &quot; with salary &quot; + salary);
+   }
+
+   public double getSalary() {
+      return salary;
+   }
+
+   public void setSalary(double newSalary) {
+      if(newSalary &gt;= 0.0) {
+         salary = newSalary;
+      }
+   }
+
+   public double computePay() {
+      System.out.println(&quot;Computing salary pay for &quot; + getName());
+      return salary/52;
+   }
+}
 </code></pre>
 
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p><a href="http://stackoverflow.com/questions/1005073/initialization-of-an-arraylist-in-one-line">Initialization of an ArrayList in one line</a>&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div></div>
+<p>Now, you study the following program carefully and try to determine its output</p>
+<pre><code class="java">/* File name : VirtualDemo.java */
+public class VirtualDemo {
+
+   public static void main(String [] args) {
+      Salary s = new Salary(&quot;Mohd Mohtashim&quot;, &quot;Ambehta, UP&quot;, 3, 3600.00);
+      Employee e = new Salary(&quot;John Adams&quot;, &quot;Boston, MA&quot;, 2, 2400.00);
+      System.out.println(&quot;Call mailCheck using Salary reference --&quot;);
+      s.mailCheck();
+      System.out.println(&quot;\n Call mailCheck using Employee reference--&quot;);
+      e.mailCheck();
+   }
+}
+</code></pre>
+
+<p>This will produce the following result</p>
+<pre><code>Constructing an Employee
+Constructing an Employee
+
+Call mailCheck using Salary reference --
+Within mailCheck of Salary class
+Mailing check to Mohd Mohtashim with salary 3600.0
+
+Call mailCheck using Employee reference--
+Within mailCheck of Salary class
+Mailing check to John Adams with salary 2400.0
+</code></pre>
+
+<p>Here, we instantiate two Salary objects. One using a Salary reference <strong>s</strong>, and the other using an Employee reference <strong>e</strong>.</p>
+<p>While invoking <em>s.mailCheck()</em>, the compiler sees <em>mailCheck()</em> in the Salary class at compile time, and the JVM invokes <em>mailCheck()</em> in the Salary class at run time.</p>
+<p><em>mailCheck()</em> on <strong>e</strong> is quite different because <strong>e</strong> is an Employee reference. When the compiler sees <em>e.mailCheck()</em>, the compiler sees the <em>mailCheck()</em> method in the Employee class.</p>
+<p>Here, at compile time, the compiler used mailCheck() in Employee to validate this statement. At run time, however, the JVM invokes mailCheck() in the Salary class.</p>
+<p>This behavior is referred to as virtual method invocation, and these methods are referred to as virtual methods. An overridden method is invoked at run time, no matter what data type the reference is that was used in the source code at compile time.</p>
+<h2 id="related-readings">Related Readings</h2>
+<ul>
+<li><a href="https://www.tutorialspoint.com/java/java_polymorphism.htm">"Java Polymorphism". <em>www.tutorialspoint.com</em>. N.p., 2016. Web. 10 Dec. 2016.</a></li>
+</ul></div>
             
         </div>
 
