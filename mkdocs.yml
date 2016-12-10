@@ -11,6 +11,7 @@ pages:
   - "Data Structure": "data_structure.md"
   - "OOP":
     - "Overview": "oop.md"
+    - "Encapsulation": "oop_encapsulation.md"
     - "Inheritance": "oop_inheritance.md"
   - "IDE": "ide.md"
   - "Package Manager": "package_manager.md"
