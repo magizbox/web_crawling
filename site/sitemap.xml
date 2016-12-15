@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-12-12</lastmod>
+     <lastmod>2016-12-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>None/getting_started/</loc>
-     <lastmod>2016-12-12</lastmod>
+     <lastmod>2016-12-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,19 +21,19 @@
         
     <url>
      <loc>None/introduction/</loc>
-     <lastmod>2016-12-12</lastmod>
+     <lastmod>2016-12-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/basic_syntax/</loc>
-     <lastmod>2016-12-12</lastmod>
+     <lastmod>2016-12-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/data_structure/</loc>
-     <lastmod>2016-12-12</lastmod>
+     <lastmod>2016-12-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -44,32 +44,38 @@
     </url>
         
     <url>
+     <loc>None/io/</loc>
+     <lastmod>2016-12-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/error_handling/</loc>
-     <lastmod>2016-12-12</lastmod>
+     <lastmod>2016-12-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/ide/</loc>
-     <lastmod>2016-12-12</lastmod>
+     <lastmod>2016-12-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/package_manager/</loc>
-     <lastmod>2016-12-12</lastmod>
+     <lastmod>2016-12-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/build_tool/</loc>
-     <lastmod>2016-12-12</lastmod>
+     <lastmod>2016-12-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/production/</loc>
-     <lastmod>2016-12-12</lastmod>
+     <lastmod>2016-12-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

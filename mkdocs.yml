@@ -15,6 +15,7 @@ pages:
     - "Inheritance": "oop_inheritance.md"
     - "Polymorphism": "oop_polymorphism.md"
     - "Abstraction": "oop_abstraction.md"
+  - "Files & IO": "io.md"
   - "Error Handling": "error_handling.md"
   - "IDE": "ide.md"
   - "Package Manager": "package_manager.md"
