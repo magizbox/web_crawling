@@ -4,15 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-12-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/getting_started/</loc>
-     <lastmod>2016-12-15</lastmod>
+     <lastmod>2017-01-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,65 +12,63 @@
     
         
     <url>
-     <loc>None/introduction/</loc>
-     <lastmod>2016-12-15</lastmod>
+     <loc>None/web_crawler/</loc>
+     <lastmod>2017-01-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/basic_syntax/</loc>
-     <lastmod>2016-12-15</lastmod>
+     <loc>None/crawling/</loc>
+     <lastmod>2017-01-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/data_structure/</loc>
-     <lastmod>2016-12-15</lastmod>
+     <loc>None/new_approach/</loc>
+     <lastmod>2017-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/scrapy/</loc>
+     <lastmod>2017-01-24</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/nutch/</loc>
+     <lastmod>2017-01-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None</loc>
-     <lastmod></lastmod>
+     <loc>None/nutch_architecture/</loc>
+     <lastmod>2017-01-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/io/</loc>
-     <lastmod>2016-12-15</lastmod>
+     <loc>None/nutch_intellij/</loc>
+     <lastmod>2017-01-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
+    
+
+    
     <url>
-     <loc>None/error_handling/</loc>
-     <lastmod>2016-12-15</lastmod>
+     <loc>None/feed/</loc>
+     <lastmod>2017-01-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    <url>
-     <loc>None/ide/</loc>
-     <lastmod>2016-12-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/package_manager/</loc>
-     <lastmod>2016-12-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/build_tool/</loc>
-     <lastmod>2016-12-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/production/</loc>
-     <lastmod>2016-12-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
     
 
 </urlset>

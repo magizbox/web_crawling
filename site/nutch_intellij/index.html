@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Vu Anh">
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>Develop Nutch in IntellIJ - Web Crawling</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../components/magiz-c-book/src/book.css" rel="stylesheet">
+        <link href="../components/magiz-c-course/src/course.css" rel="stylesheet">
+        <link href="../components/magiz-c-video/src/video.css" rel="stylesheet">
+        <link href="../components/magiz-c-benchmark/src/benchmark.css" rel="stylesheet">
+        <link href="../components/magiz-c-paper/src/paper.css" rel="stylesheet">
+        <link href="../components/magiz-c-feed/src/feed.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-68978617-1', 'magizbox.com');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Web Crawling</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href=".."><span class='fa fa-home'></span> Home</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../web_crawler/">Web Cralwer</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../crawling/">Crawling</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../new_approach/">New Approach</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scrapy <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../scrapy/">Getting Started</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Apache Nutch <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../nutch/">Getting Started</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../nutch_architecture/">Architecture</a>
+</li>
+
+                        
+                            
+<li class="active">
+    <a href="./">Develop Nutch in IntellIJ</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../feed/"><span class='fa fa-rss'></span> News</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../nutch_architecture/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../feed/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#config-nutch-run-intellij">Config nutch run intellij</a></li>
+        
+            <li><a href="#run-nutch-in-intellij">Run nutch in intellij</a></li>
+        
+    
+        <li class="main "><a href="#dev-nutch-in-intellij">Dev Nutch in Intellij</a></li>
+        
+    
+        <li class="main "><a href="#nutch-dev">Nutch Dev</a></li>
+        
+    
+        <li class="main "><a href="#nutch-plugin-intellij">Nutch plugin intellij</a></li>
+        
+            <li><a href="#1structure-nutch-1">1.Structure nutch :[1]</a></li>
+        
+            <li><a href="#2run-nutch-intellij">2.Run nutch intellij</a></li>
+        
+            <li><a href="#3run-plugin-creativecommons">3.Run plugin creativecommons</a></li>
+        
+            <li><a href="#2run-plugin-feed">2.Run plugin feed</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="config-nutch-run-intellij">Config nutch run intellij</h1>
+<p>Copy file</p>
+<p>copy all the files in the <code>runtime/conf</code> on <code>out/test/apache-Nutch-2.3 and out/production/apache-Nutch-2.3</code></p>
+<p>add these lines to file <code>$NUTCH_SRC/out/test/nutch-site.xml</code></p>
+<pre><code>&lt;property&gt;
+   &lt;name&gt;plugin.folders&lt;/name&gt;
+   &lt;value&gt;&lt;nutch_src&gt;/build/plugins&lt;/value&gt;
+ &lt;/property&gt;
+</code></pre>
+
+<h3 id="run-nutch-in-intellij">Run nutch in intellij</h3>
+<pre><code>Run-&gt;Edit Configurations...-&gt;add path agrs:path to file list links crawler
+</code></pre>
+
+<h1 id="dev-nutch-in-intellij">Dev Nutch in Intellij</h1>
+<p>Receipts: <code>IntellIJ 14</code>, <code>Apache Nutch 2.3</code></p>
+<p><strong>1.</strong> Get Nutch source</p>
+<pre><code class="shell">wget http://www.eu.apache.org/dist/nutch/2.3/apache-nutch-2.3-src.tar.gz
+tar -xzf apache-nutch-2.3-src.tar.gz
+</code></pre>
+
+<p><strong>2.</strong> Import Nutch source in IntellIJ</p>
+<p>[wonderplugin_slider id="1"]</p>
+<div style="clear:both; height:80px;"></div>
+
+<p><strong>3.</strong> Get Dependencies by Ant</p>
+<p>[wonderplugin_slider id="3"]</p>
+<div style="clear:both; height:80px;"></div>
+
+<p><strong>4.</strong> Import Dependencies to IntellIJ</p>
+<p>[wonderplugin_slider id="4"]</p>
+<div style="clear:both; height:80px;"></div>
+
+<h1 id="nutch-dev">Nutch Dev</h1>
+<p>1.Intasll java in ubuntu</p>
+<p>-Downloads java version .zip</p>
+<pre><code class="xml"> http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+</code></pre>
+
+<p>-Create folder jvm</p>
+<pre><code class="xml"> sudo mkdir /usr/lib/jvm/
+</code></pre>
+
+<p>-Cd to folder downloads java version .zip</p>
+<pre><code class="xml"> sudo mv jdk1.7.0_x/ /usr/lib/jvm/jdk1.7.0_x
+</code></pre>
+
+<p>-Run command line</p>
+<pre><code class="xml">  sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.7.0_x/jre/bin/java 0
+</code></pre>
+
+<p>-Tets version java</p>
+<pre><code class="xml">  java -version
+</code></pre>
+
+<p>2.Intasll ant in ubuntu</p>
+<p>-Downloads ant</p>
+<pre><code class="xml">http://ant.apache.org/manualdownload.cgi
+</code></pre>
+
+<p>-Add path ant vao file environment</p>
+<pre><code class="xml"> sudo nano /etc/environment
+ $ANT_ROOT/bin
+</code></pre>
+
+<p>-Run command line</p>
+<pre><code class="xml">source /etc/environment
+ant -version
+</code></pre>
+
+<p>3.Intasll hbase in ubuntu</p>
+<p>-Downloads and extract hbase 0.94.27</p>
+<pre><code class="xml">  https://archive.apache.org/dist/hbase/hbase-0.94.27/
+</code></pre>
+
+<p>-Edit file $HABSE_ROOT/conf/hbase-site.xml</p>
+<pre><code class="xml"> &lt;configuration&gt;
+  &lt;property&gt;
+    &lt;name&gt;hbase.rootdir&lt;/name&gt;
+    &lt;value&gt;file:///$PATH_DATA_BASE/database&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;
+    &lt;value&gt;false&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
+    &lt;value&gt;hbase.io&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;zookeeper.znode.parent&lt;/name&gt;
+    &lt;value&gt;/hbase-unsecure&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;hbase.rpc.timeout&lt;/name&gt;
+    &lt;value&gt;2592000000&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<p>-Edit file $HBASE_ROOT/conf/hbase-env.sh</p>
+<pre><code class="xml">  export JAVA_HOME=$PATH_JAVA_HOME
+</code></pre>
+
+<p>-Edit file $HBASE_ROOT/conf/regionservers</p>
+<pre><code class="xml">hbase.io.nutch
+</code></pre>
+
+<p>-Edit file hosts in ubuntu</p>
+<pre><code class="xml">  sudo nano /etc/hosts
+  {ip} hbase.io.nutch
+</code></pre>
+
+<p>-Edit file hostname in ubuntu</p>
+<pre><code class="xml"> sudo nano /etc/hostname
+ hbase.io.nutch
+</code></pre>
+
+<p>-Run and stop hbase in ubuntu</p>
+<pre><code> Run hbase : cd $HBASE_ROOT/bin ./start-hbase.sh
+ Stop hbase: cd $HBASE_ROOT/bin ./stop-hbase.sh
+</code></pre>
+
+<p>*Error in intasll hbase</p>
+<pre><code class="xml">- Error regionserver localhost(Edit file hosts and file host name)
+- Error client no remote server intasll hbase(Turn off file firewall)
+</code></pre>
+
+<p>4.Build nutch in ant</p>
+<p>-Downloads and extract nutch</p>
+<pre><code class="xml">  http://nutch.apache.org/
+</code></pre>
+
+<p>-Edit file $NUTCH_ROOT/ivy/ivy.xml</p>
+<pre><code class="xml"> &lt;dependency org=&quot;org.apache.gora&quot; name=&quot;gora-hbase&quot; rev=&quot;0.5&quot;
+conf=&quot;*-&gt;default&quot; /&gt;
+</code></pre>
+
+<p>-Edit file $NUTCH_ROOT/ivy/ivysettings.xml</p>
+<pre><code class="xml"> #&lt;property name=&quot;repo.maven.org&quot;
+ #   value=&quot;http://repo1.maven.org/maven2/&quot;
+ #  override=&quot;false&quot;/&gt;
+
+&lt;property name = &quot;repo.maven.org&quot;
+   value = &quot;http://maven.oschina.net/content/groups/public/&quot;
+   override = &quot;false&quot; /&gt;
+</code></pre>
+
+<p>-Edit file $NUTCH_ROOT/conf/nutch-site.xml</p>
+<pre><code class="xml">&lt;configuration&gt;
+&lt;property&gt;
+   &lt;name&gt;plugin.folders&lt;/name&gt;
+   &lt;value&gt;$NUTCH_ROOT/build/plugins&lt;/value&gt;
+ &lt;/property&gt;
+&lt;property&gt;
+        &lt;name&gt;http.agent.name&lt;/name&gt;
+        &lt;value&gt;mycrawlername&lt;/value&gt;
+        &lt;!-- this can be changed to something more sane if you like --&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;http.robots.agents&lt;/name&gt;
+        &lt;value&gt;mycrawlername&lt;/value&gt;
+        &lt;!-- this is the robot name we're looking for in robots.txt files --&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;storage.data.store.class&lt;/name&gt;
+        &lt;value&gt;org.apache.gora.hbase.store.HBaseStore&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;plugin.includes&lt;/name&gt;
+        &lt;!-- do \*\*NOT\*\* enable the parse-html plugin, if you want proper HTML parsing. Use something like parse-tika! --&gt;
+        &lt;value&gt;
+            protocol-http|protocol-httpclient|urlfilter-regex|parse-(text|tika|js)|index-(basic|anchor)|query-(basic|site|url)|response-(json|xml)|summary-basic|scoring-opic|urlnormalizer-(pass|regex|basic)|indexer-elastic|index-metadata|index-more
+        &lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;db.ignore.external.links&lt;/name&gt;
+        &lt;value&gt;true&lt;/value&gt;
+        &lt;!-- do not leave the seeded domains (optional) --&gt;
+    &lt;/property&gt;
+
+
+&lt;!-- elasticsearch index properties --&gt;
+&lt;property&gt;
+  &lt;name&gt;elastic.host&lt;/name&gt;
+  &lt;value&gt;localhost&lt;/value&gt;
+  &lt;description&gt;The hostname to send documents to using TransportClient.
+  Either host and port must be defined or cluster.
+  &lt;/description&gt;
+&lt;/property&gt;
+
+&lt;property&gt;
+  &lt;name&gt;elastic.port&lt;/name&gt;
+  &lt;value&gt;9300&lt;/value&gt;
+  &lt;description&gt;
+  The port to connect to using TransportClient.
+  &lt;/description&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;elastic.index&lt;/name&gt;
+  &lt;value&gt;nutch&lt;/value&gt;
+  &lt;description&gt;
+  The name of the elasticsearch index. Will normally be autocreated if it
+  doesn't exist.
+  &lt;/description&gt;
+&lt;/property&gt;
+&lt;!-- end index --&gt;
+
+&lt;property&gt;
+        &lt;name&gt;http.proxy.host&lt;/name&gt;
+        &lt;value&gt;192.168.80.1&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;http.proxy.port&lt;/name&gt;
+        &lt;value&gt;8080&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;http.proxy.username&lt;/name&gt;
+        &lt;value&gt;user1&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;http.proxy.password&lt;/name&gt;
+        &lt;value&gt;user1&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<p>-Edit file file $NUTCH_ROOT/conf/gora.property</p>
+<pre><code class="xml"> gora.datastore.default=org.apache.gora.hbase.store.HBaseStore
+</code></pre>
+
+<p>-Build nucth</p>
+<pre><code class="xml"> ant runtime
+ or
+ ant eclipse -verbose
+</code></pre>
+
+<p>-Create file links</p>
+<p>-Run nutch</p>
+<pre><code class="xml"> cd $NUTCH_ROOT/runtime/local/bin
+ run inject : ./nutch inject file:///$PATH_LIKNS
+ run generate : ./nutch generate -topN 10
+ run fetch : ./nutch fetch -all
+ run parse : ./nutch parse -all
+ run updatedb : ./nutch updatedb -all
+</code></pre>
+
+<p>-Downloads and extract elastic</p>
+<pre><code class="xml"> https://www.elastic.co/downloads/elasticsearch
+</code></pre>
+
+<p>-Run elastic</p>
+<pre><code class="xml">cd $ELASTIC/bin
+./elasticsearch
+</code></pre>
+
+<p>-Index data in elastic</p>
+<pre><code class="xml"> cd $NUTCH_ROOT/runtime/bin
+ run index : ./nutch index -all
+</code></pre>
+
+<p>5.Run nutch intellij</p>
+<p>Change <code>$NUTCH_ROOT/runtime/local/conf/hbase-site.xml</code></p>
+<pre><code class="xml">&lt;configuration&gt;
+&lt;property&gt;
+&lt;name&gt;hbase.rootdir&lt;/name&gt;
+&lt;value&gt;file:///home/hainv/Downloads/crawler/data&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;hbase.cluster.distributed&lt;/name&gt;
+&lt;value&gt;false&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
+&lt;value&gt;hbase.io&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;zookeeper.znode.parent&lt;/name&gt;
+&lt;value&gt;/hbase-unsecure&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+&lt;name&gt;hbase.rpc.timeout&lt;/name&gt;
+&lt;value&gt;2592000000&lt;/value&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<h1 id="nutch-plugin-intellij">Nutch plugin intellij</h1>
+<h3 id="1structure-nutch-1">1.Structure nutch :<a href="https://fossies.org/dox/apache-nutch-2.3-src/classorg_1_1apache_1_1nutch_1_1parse_1_1html_1_1DOMBuilder.html">[1]</a></h3>
+<h3 id="2run-nutch-intellij">2.Run nutch intellij</h3>
+<p>Downloads nucth2.3:<a href ="http://nutch.apache.org/downloads.html">http://nutch.apache.org/downloads.html</a>
+ Editing file $NUTCH_ROOT/ivy/ivysettings.xml</p>
+<pre><code class="xml">&lt;ivysettings&gt;
+  &lt;property name=&quot;oss.sonatype.org&quot;
+    value=&quot;http://oss.sonatype.org/content/repositories/releases/&quot;
+    override=&quot;false&quot;/&gt;
+  &lt;property name = &quot;repo.maven.org&quot;
+      value = &quot;http://maven.oschina.net/content/groups/public/&quot;
+      override = &quot;false&quot; /&gt;
+  &lt;property name=&quot;repository.apache.org&quot;
+    value=&quot;https://repository.apache.org/content/repositories/snapshots/&quot;
+    override=&quot;false&quot;/&gt;
+  &lt;property name=&quot;maven2.pattern&quot;
+    value=&quot;[organisation]/[module]/[revision]/[module]-[revision]&quot;/&gt;
+  &lt;property name=&quot;maven2.pattern.ext&quot;
+    value=&quot;${maven2.pattern}.[ext]&quot;/&gt;
+  &lt;!-- pull in the local repository --&gt;
+  &lt;include url=&quot;${ivy.default.conf.dir}/ivyconf-local.xml&quot;/&gt;
+  &lt;settings defaultResolver=&quot;default&quot;/&gt;
+  &lt;resolvers&gt;
+    &lt;ibiblio name=&quot;maven2&quot;
+      root=&quot;${repo.maven.org}&quot;
+      pattern=&quot;${maven2.pattern.ext}&quot;
+      m2compatible=&quot;true&quot;
+      /&gt;
+    &lt;ibiblio name=&quot;apache-snapshot&quot;
+      root=&quot;${repository.apache.org}&quot;
+      changingPattern=&quot;.*-SNAPSHOT&quot;
+      m2compatible=&quot;true&quot;
+      /&gt;
+    &lt;ibiblio name=&quot;restlet&quot;
+      root=&quot;http://maven.restlet.org&quot;
+      pattern=&quot;${maven2.pattern.ext}&quot;
+      m2compatible=&quot;true&quot;
+      /&gt;
+     &lt;ibiblio name=&quot;sonatype&quot;
+      root=&quot;${oss.sonatype.org}&quot;
+      pattern=&quot;${maven2.pattern.ext}&quot;
+      m2compatible=&quot;true&quot;
+      /&gt;
+
+    &lt;chain name=&quot;default&quot; dual=&quot;true&quot;&gt;
+      &lt;resolver ref=&quot;local&quot;/&gt;
+      &lt;resolver ref=&quot;maven2&quot;/&gt;
+      &lt;resolver ref=&quot;sonatype&quot;/&gt;
+      &lt;resolver ref=&quot;apache-snapshot&quot;/&gt;
+    &lt;/chain&gt;
+    &lt;chain name=&quot;internal&quot;&gt;
+      &lt;resolver ref=&quot;local&quot;/&gt;
+    &lt;/chain&gt;
+    &lt;chain name=&quot;external&quot;&gt;
+      &lt;resolver ref=&quot;maven2&quot;/&gt;
+      &lt;resolver ref=&quot;sonatype&quot;/&gt;
+    &lt;/chain&gt;
+    &lt;chain name=&quot;external-and-snapshots&quot;&gt;
+      &lt;resolver ref=&quot;maven2&quot;/&gt;
+      &lt;resolver ref=&quot;apache-snapshot&quot;/&gt;
+      &lt;resolver ref=&quot;sonatype&quot;/&gt;
+    &lt;/chain&gt;
+    &lt;chain name=&quot;restletchain&quot;&gt;
+      &lt;resolver ref=&quot;restlet&quot;/&gt;
+    &lt;/chain&gt;
+  &lt;/resolvers&gt;
+  &lt;modules&gt;
+    &lt;module organisation=&quot;org.apache.nutch&quot; name=&quot;.*&quot; resolver=&quot;internal&quot;/&gt;
+    &lt;module organisation=&quot;org.restlet&quot; name=&quot;.*&quot; resolver=&quot;restletchain&quot;/&gt;
+    &lt;module organisation=&quot;org.restlet.jse&quot; name=&quot;.*&quot; resolver=&quot;restletchain&quot;/&gt;
+  &lt;/modules&gt;
+&lt;/ivysettings&gt;
+</code></pre>
+
+<p>Editing file $NUTCH_ROOT/ivy/ivy.xml</p>
+<pre><code class="xml">&lt;dependency org=&quot;org.apache.gora&quot; name=&quot;gora-hbase&quot; rev=&quot;0.5&quot; conf=&quot;*-&gt;default&quot; /&gt;
+</code></pre>
+
+<p>Editing file $NUCTH_ROOT/conf/gora.properties</p>
+<pre><code class="xml">gora.datastore.default=org.apache.gora.hbase.store.HBaseStore
+</code></pre>
+
+<p>Editing file $NUTCH_ROOT/conf/nutch_site.xml</p>
+<pre><code class="xml">&lt;configuration&gt;
+&lt;property&gt;
+   &lt;name&gt;plugin.folders&lt;/name&gt;
+   &lt;value&gt;$NUTCH_ROOT/build/plugins&lt;/value&gt;
+ &lt;/property&gt;
+&lt;property&gt;
+        &lt;name&gt;http.agent.name&lt;/name&gt;
+        &lt;value&gt;mycrawlername&lt;/value&gt;
+        &lt;!-- this can be changed to something more sane if you like --&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;http.robots.agents&lt;/name&gt;
+        &lt;value&gt;mycrawlername&lt;/value&gt;
+        &lt;!-- this is the robot name we're looking for in robots.txt files --&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;storage.data.store.class&lt;/name&gt;
+        &lt;value&gt;org.apache.gora.hbase.store.HBaseStore&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;plugin.includes&lt;/name&gt;
+        &lt;!-- do \*\*NOT\*\* enable the parse-html plugin, if you want proper HTML parsing. Use something like parse-tika! --&gt;
+        &lt;value&gt;
+            protocol-httpclient|urlfilter-regex|parse-(text|tika|js)|index-(basic|anchor)|query-(basic|site|url)|response-(json|xml)|summary-basic|scoring-opic|urlnormalizer-(pass|regex|basic)|indexer-elastic
+        &lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;db.ignore.external.links&lt;/name&gt;
+        &lt;value&gt;true&lt;/value&gt;
+        &lt;!-- do not leave the seeded domains (optional) --&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;elastic.host&lt;/name&gt;
+        &lt;value&gt;localhost&lt;/value&gt;
+        &lt;!-- where is ElasticSearch listening --&gt;
+    &lt;/property&gt;
+
+&lt;property&gt;
+        &lt;name&gt;http.proxy.host&lt;/name&gt;
+        &lt;value&gt;192.168.80.1&lt;/value&gt;
+        &lt;description&gt;The proxy hostname. If empty, no proxy is used.&lt;/description&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;http.proxy.port&lt;/name&gt;
+        &lt;value&gt;8080&lt;/value&gt;
+        &lt;description&gt;The proxy port.&lt;/description&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;http.proxy.username&lt;/name&gt;
+        &lt;value&gt;user1&lt;/value&gt;
+        &lt;description&gt;Username for proxy. This will be used by 'protocol-httpclient', if the proxy server requests basic,
+            digest
+            and/or NTLM authentication. To use this, 'protocol-httpclient' must be present in the value of
+            'plugin.includes'
+            property. NOTE: For NTLM authentication, do not prefix the username with the domain, i.e. 'susam' is correct
+            whereas
+            'DOMAINsusam' is incorrect.
+        &lt;/description&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;http.proxy.password&lt;/name&gt;
+        &lt;value&gt;user1&lt;/value&gt;
+        &lt;description&gt;Password for proxy. This will be used by 'protocol-httpclient', if the proxy server requests basic,
+            digest
+            and/or NTLM authentication. To use this, 'protocol-httpclient' must be present in the value of
+            'plugin.includes'
+            property.
+        &lt;/description&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<p>Editing file $NUCTH_ROOT/conf/hbase-site.xml</p>
+<pre><code class="xml">&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.rootdir&lt;/name&gt;
+        &lt;value&gt;file:///home/rombk/Downloads/database&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;
+        &lt;value&gt;false&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
+        &lt;value&gt;hbase.io&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;zookeeper.znode.parent&lt;/name&gt;
+        &lt;value&gt;/hbase-unsecure&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;hbase.rpc.timeout&lt;/name&gt;
+        &lt;value&gt;2592000000&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<p>Run terminal</p>
+<pre><code class="xml"> ant eclipse -verbose
+</code></pre>
+
+<p>Import nucth intellij</p>
+<pre><code class="xml">
+</code></pre>
+
+<h3 id="3run-plugin-creativecommons">3.Run plugin creativecommons</h3>
+<p>Sample plugins that parse and index Creative Commons medadata.<a href="https://nutch.apache.org/apidocs/apidocs-1.7/org/creativecommons/nutch/package-summary.html">1</a>
+Step 1. Create folder creativecommons in path <code>$NUTCH_HOME/out/test/</code></p>
+<p>Step 2. Create file <code>nutch-site.xml</code> in folder <code>$NUTCH_HOME/out/test/creativecommons</code>  and add content</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;configuration.xsl&quot;?&gt;
+&lt;!-- Put site-specific property overrides in this file. --&gt;
+&lt;configuration&gt;
+&lt;property&gt;
+   &lt;name&gt;plugin.folders&lt;/name&gt;
+   &lt;value&gt;$NUTCH_HOME/build/plugins&lt;/value&gt;
+ &lt;/property&gt;
+&lt;property&gt;
+   &lt;name&gt;http.agent.name&lt;/name&gt;
+   &lt;value&gt;mycrawlername&lt;/value&gt;
+&lt;!-- this can be changed to something more sane if you like --&gt;
+&lt;/property&gt;
+&lt;property&gt;
+   &lt;name&gt;http.robots.agents&lt;/name&gt;
+   &lt;value&gt;mycrawlername&lt;/value&gt;
+&lt;!-- this is the robot name we're looking for in robots.txt files --&gt;
+&lt;/property&gt;
+&lt;property&gt;
+   &lt;name&gt;storage.data.store.class&lt;/name&gt;
+   &lt;value&gt;org.apache.gora.hbase.store.HBaseStore&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+   &lt;name&gt;plugin.includes&lt;/name&gt;
+  &lt;!-- do \*\*NOT\*\* enable the parse-html plugin, if you want proper HTML parsing. Use something like parse-tika! --&gt;
+  &lt;value&gt;indexer-elastic|creativecommons|parse-html&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+   &lt;name&gt;db.ignore.external.links&lt;/name&gt;
+   &lt;value&gt;true&lt;/value&gt;
+&lt;!-- do not leave the seeded domains (optional) --&gt;
+&lt;/property&gt;
+&lt;property&gt;
+   &lt;name&gt;elastic.host&lt;/name&gt;
+   &lt;value&gt;localhost&lt;/value&gt;
+&lt;!-- where is ElasticSearch listening --&gt;
+&lt;/property&gt;
+&lt;!-- config proxy--&gt;
+&lt;property&gt;
+   &lt;name&gt;http.proxy.host&lt;/name&gt;
+   &lt;value&gt;&lt;hosts&gt;&lt;/value&gt;
+   &lt;description&gt;The proxy hostname. If empty, no proxy is used.&lt;/description&gt;
+&lt;/property&gt;
+&lt;property&gt;
+   &lt;name&gt;http.proxy.port&lt;/name&gt;
+   &lt;value&gt;&lt;port&gt;&lt;/value&gt;
+   &lt;description&gt;The proxy port.&lt;/description&gt;
+&lt;/property&gt;
+&lt;property&gt;
+   &lt;name&gt;http.proxy.username&lt;/name&gt;
+   &lt;value&gt;&lt;user1&gt;&lt;/value&gt;
+   &lt;description&gt;Username for proxy. This will be used by 'protocol-httpclient', if the proxy server requests basic,
+digest
+and/or NTLM authentication. To use this, 'protocol-httpclient' must be present in the value of
+'plugin.includes'
+property. NOTE: For NTLM authentication, do not prefix the username with the domain, i.e. 'susam' is correct
+whereas
+'DOMAINsusam' is incorrect.
+     &lt;/description&gt;
+&lt;/property&gt;
+&lt;property&gt;
+   &lt;name&gt;http.proxy.password&lt;/name&gt;
+   &lt;value&gt;&lt;user1&gt;&lt;/value&gt;
+   &lt;description&gt;Password for proxy. This will be used by 'protocol-httpclient', if the proxy server requests basic,
+digest
+and/or NTLM authentication. To use this, 'protocol-httpclient' must be present in the value of
+'plugin.includes'
+property.
+    &lt;/description&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<h3 id="2run-plugin-feed">2.Run plugin feed</h3>
+<p>Plugin feed parsing of rss
+Error : Parsing of RSS feeds fails (tejasp) <a href = "https://issues.apache.org/jira/browse/NUTCH-1053"> [2] </a> and read file $NUTCH_ROOT/CHANFES.txt</p></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../components/underscore/underscore.js"></script>
+        <script src="../components/magiz-c-book/src/gspreadsheet.js"></script>
+        <script src="../components/magiz-c-paper/src/paper.js"></script>
+        <script src="../components/magiz-c-course/src/course.js"></script>
+        <script src="../components/magiz-c-benchmark/src/benchmark.js"></script>
+        <script src="../components/magiz-c-benchmark/src/bootstrap-popup.js"></script>
+        <script src="../components/magiz-c-book/src/book.js"></script>
+        <script src="../components/magiz-c-video/src/video.js"></script>
+        <script src="../components/magiz-c-feed/src/feed.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="./img/favicon.ico">
 
-	<title>JavaTutorial</title>
+	<title>Web Crawling</title>
 
         <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
@@ -20,6 +20,7 @@
         <link href="./components/magiz-c-video/src/video.css" rel="stylesheet">
         <link href="./components/magiz-c-benchmark/src/benchmark.css" rel="stylesheet">
         <link href="./components/magiz-c-paper/src/paper.css" rel="stylesheet">
+        <link href="./components/magiz-c-feed/src/feed.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -58,7 +59,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">JavaTutorial</a>
+            <a class="navbar-brand" href=".">Web Crawling</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -74,110 +75,77 @@
                 
                 
                 
-                    <li >
-                        <a href="getting_started/"><span class='fa fa-cloud-download'></span> Getting Started</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="web_crawler/">Web Cralwer</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="crawling/">Crawling</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="new_approach/">New Approach</a>
+</li>
+
+                        
+                        </ul>
                     </li>
                 
                 
                 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class='fa fa-book'></span> Learn <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Scrapy <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="introduction/">Introduction</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="basic_syntax/">Basic Syntax</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="data_structure/">Data Structure</a>
-</li>
-
-                        
-                            
-  <li class="dropdown-submenu">
-    <a tabindex="-1" href="">OOP</a>
-    <ul class="dropdown-menu">
-        
-            
-<li >
-    <a href="oop/">Overview</a>
-</li>
-
-        
-            
-<li >
-    <a href="oop_encapsulation/">Encapsulation</a>
-</li>
-
-        
-            
-<li >
-    <a href="oop_inheritance/">Inheritance</a>
-</li>
-
-        
-            
-<li >
-    <a href="oop_polymorphism/">Polymorphism</a>
-</li>
-
-        
-            
-<li >
-    <a href="oop_abstraction/">Abstraction</a>
-</li>
-
-        
-    </ul>
-  </li>
-
-                        
-                            
-<li >
-    <a href="io/">Files & IO</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="error_handling/">Error Handling</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="ide/">IDE</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="package_manager/">Package Manager</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="build_tool/">Build Tool</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="production/">Production</a>
+    <a href="scrapy/">Getting Started</a>
 </li>
 
                         
                         </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Apache Nutch <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="nutch/">Getting Started</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="nutch_architecture/">Architecture</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="nutch_intellij/">Develop Nutch in IntellIJ</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="feed/"><span class='fa fa-rss'></span> News</a>
                     </li>
                 
                 
@@ -197,7 +165,7 @@
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="getting_started/">
+                        <a rel="prev" href="web_crawler/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -213,27 +181,27 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#java">Java</a></li>
-        
-            <li><a href="#books">Books</a></li>
-        
-            <li><a href="#courses">Courses</a></li>
+        <li class="main active"><a href="#good-free-web-scrapers">Good Free Web Scrapers</a></li>
         
     
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="java">Java</h1>
-<p>Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers "write once, run anywhere" (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2016, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers. Java was originally developed by <code>James Gosling</code> at Sun Microsystems (which has since been acquired by Oracle Corporation) and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++, but it has fewer low-level facilities than either of them.</p>
-<p>The original and reference implementation Java compilers, virtual machines, and class libraries were originally released by Sun under proprietary licences. As of May 2007, in compliance with the specifications of the Java Community Process, Sun relicensed most of its Java technologies under the GNU General Public License. Others have also developed alternative implementations of these Sun technologies, such as the GNU Compiler for Java (bytecode compiler), GNU Classpath (standard libraries), and IcedTea-Web (browser plugin for applets).</p>
-<h2 id="books">Books</h2>
-<div class="books" gid="1KnBATFaoD5M-KYyBzIVylepd_FUMoNVOJXn0g2nilDc"></div>
-
-<div class="clearfix"></div>
-
-<h2 id="courses">Courses</h2>
-<div class="courses" gid="1x_E-BF_aZwzXxQL9-C0rCjwifLwq0Xwnbd5znNeKiqQ"></div></div>
+<p>Web crawling is the process by which we gather pages from the Web, in order to index them and support a search engine. The objective of crawling is to quickly and efficiently gather as many useful web pages as possible, together with the link structure that interconnects them.</p>
+<h2 id="good-free-web-scrapers">Good Free Web Scrapers</h2>
+<ol>
+<li><a href="http://www.dataextractionservices.com/webdata-extraction.php?utm_source=Quora">Extract Data from Web</a></li>
+<li><a href="https://tarantoola.io/">Tarantoola.io | Web Scraping, Data Extraction From Websites</a></li>
+<li><a href="http://www.idataguru.com/data-scraping-services/">iDataguru</a></li>
+<li><a href="http://datahut.co/">datahut.co</a></li>
+<li><a href="http://webscraper.io/">Web Scraper</a></li>
+<li><a href="http://www.computyne.com/web-research-services/web-scraping-services/">Web Scraping</a></li>
+<li><a href="http://www.botscraper.com/">BotScraper.com</a></li>
+<li><a href="http://www.botsol.com/Products/GoogleMapsCrawler">BotSol | Google maps crawler (free)</a></li>
+<li><a href="http://www.octoparse.com/?qu">Octoparse</a></li>
+<li><a href="http://uscraper.com/">uScraper</a></li>
+</ol></div>
             
         </div>
 
@@ -257,6 +225,7 @@
         <script src="./components/magiz-c-benchmark/src/bootstrap-popup.js"></script>
         <script src="./components/magiz-c-book/src/book.js"></script>
         <script src="./components/magiz-c-video/src/video.js"></script>
+        <script src="./components/magiz-c-feed/src/feed.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">
@@ -288,5 +257,5 @@
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2016-12-15 04:27:27.631000
+Build Date UTC : 2017-01-24 08:35:44.443000
 -->

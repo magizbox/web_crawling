@@ -19,6 +19,7 @@
     "magiz-c-paper": "*",
     "magiz-c-book": "*",
     "magiz-c-course": "*",
-    "magiz-c-video": "*"
+    "magiz-c-video": "*",
+    "magiz-c-feed": "*"
   }
 }

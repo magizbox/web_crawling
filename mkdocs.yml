@@ -1,26 +1,20 @@
-site_name: JavaTutorial
+site_name: Web Crawling
 site_author: "Vu Anh"
 google_analytics: ["UA-68978617-1", "magizbox.com"]
 
 pages:
 - "<span class='fa fa-home'></span> Home": "index.md"
-- "<span class='fa fa-cloud-download'></span> Getting Started": 'getting_started.md'
-- "<span class='fa fa-book'></span> Learn":
-  - "Introduction": "introduction.md"
-  - "Basic Syntax": "basic_syntax.md"
-  - "Data Structure": "data_structure.md"
-  - "OOP":
-    - "Overview": "oop.md"
-    - "Encapsulation": "oop_encapsulation.md"
-    - "Inheritance": "oop_inheritance.md"
-    - "Polymorphism": "oop_polymorphism.md"
-    - "Abstraction": "oop_abstraction.md"
-  - "Files & IO": "io.md"
-  - "Error Handling": "error_handling.md"
-  - "IDE": "ide.md"
-  - "Package Manager": "package_manager.md"
-  - "Build Tool": "build_tool.md"
-  - "Production": "production.md"
+- "Overview":
+  - "Web Cralwer": "web_crawler.md"
+  - "Crawling": "crawling.md"
+  - "New Approach": "new_approach.md"
+- "Scrapy":
+  - "Getting Started": "scrapy.md"
+- "Apache Nutch":
+  - "Getting Started": "nutch.md"
+  - "Architecture": "nutch_architecture.md"
+  - "Develop Nutch in IntellIJ": "nutch_intellij.md"
+- "<span class='fa fa-rss'></span> News": "feed.md"
 
 markdown_extensions:
     - footnotes
@@ -31,6 +25,7 @@ extra_css:
   - components/magiz-c-video/src/video.css
   - components/magiz-c-benchmark/src/benchmark.css
   - components/magiz-c-paper/src/paper.css
+  - components/magiz-c-feed/src/feed.css
 
 extra_javascript:
   - components/underscore/underscore.js
@@ -41,3 +36,4 @@ extra_javascript:
   - components/magiz-c-benchmark/src/bootstrap-popup.js
   - components/magiz-c-book/src/book.js
   - components/magiz-c-video/src/video.js
+  - components/magiz-c-feed/src/feed.js
